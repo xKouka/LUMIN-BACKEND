@@ -79,6 +79,15 @@ exports.login = async (req, res) => {
       return res.status(401).json({ error: 'Email/Usuario o contraseña incorrectos' });
     }
 
+    // Obtener ID del paciente si no es admin
+    let pacienteId = null;
+    if (usuarioData.rol !== 'admin') {
+      const pacienteQuery = await pool.query('SELECT id FROM pacientes WHERE usuario_id = $1', [usuarioData.id]);
+      if (pacienteQuery.rows.length > 0) {
+        pacienteId = pacienteQuery.rows[0].id;
+      }
+    }
+
     // Crear token JWT
     const token = jwt.sign(
       {
@@ -87,6 +96,7 @@ exports.login = async (req, res) => {
         usuario: usuarioData.usuario,
         rol: usuarioData.rol,
         nombre: usuarioData.nombre,
+        paciente_id: pacienteId,
       },
       process.env.JWT_SECRET,
       { expiresIn: process.env.JWT_EXPIRE }

@@ -40,7 +40,7 @@ const generarPDF = async (req, res) => {
     console.log(`✅ Muestra encontrada. Detalles: ${detalles.length}`);
 
     // Crear documento PDF EN LANDSCAPE
-    const doc = new PDFDocument({ 
+    const doc = new PDFDocument({
       size: 'LETTER',
       layout: 'landscape', // ⭐ ORIENTACIÓN HORIZONTAL
       margin: 40,
@@ -59,8 +59,8 @@ const generarPDF = async (req, res) => {
     // PÁGINAS SIGUIENTES: Una por cada tipo de muestra
     detalles.forEach((detalle, index) => {
       doc.addPage(); // Nueva página para cada tipo de muestra
-      
-      switch(detalle.tipo_muestra) {
+
+      switch (detalle.tipo_muestra) {
         case 'sangre':
           agregarPaginaSangre(doc, muestra, detalle);
           break;
@@ -94,26 +94,26 @@ function agregarPortada(doc, muestra, detalles) {
 
   // Logo y título centrado
   doc.fontSize(32)
-     .fillColor('#10b981')
-     .text('L.U.M.I.N.', 0, 60, { width: pageWidth, align: 'center' });
-  
+    .fillColor('#10b981')
+    .text('L.U.M.I.N.', 0, 60, { width: pageWidth, align: 'center' });
+
   doc.fontSize(14)
-     .fillColor('#6b7280')
-     .text('Laboratorio Clínico Blanca Trinidad', 0, 100, { width: pageWidth, align: 'center' });
+    .fillColor('#6b7280')
+    .text('Laboratorio Clínico Blanca Trinidad', 0, 100, { width: pageWidth, align: 'center' });
 
   // Línea separadora
   doc.moveTo(80, 130)
-     .lineTo(pageWidth - 80, 130)
-     .stroke('#e5e7eb');
+    .lineTo(pageWidth - 80, 130)
+    .stroke('#e5e7eb');
 
   // Título del reporte
   doc.fontSize(24)
-     .fillColor('#1f2937')
-     .text('REPORTE DE RESULTADOS', 0, 160, { width: pageWidth, align: 'center' });
+    .fillColor('#1f2937')
+    .text('REPORTE DE RESULTADOS', 0, 160, { width: pageWidth, align: 'center' });
 
   doc.fontSize(16)
-     .fillColor('#6b7280')
-     .text(`Orden: #${muestra.id.toString().padStart(6, '0')}`, 0, 195, { width: pageWidth, align: 'center' });
+    .fillColor('#6b7280')
+    .text(`Orden: #${muestra.id.toString().padStart(6, '0')}`, 0, 195, { width: pageWidth, align: 'center' });
 
   // Datos del paciente en dos columnas
   let leftX = 100;
@@ -121,41 +121,41 @@ function agregarPortada(doc, muestra, detalles) {
   let y = 250;
 
   doc.fontSize(18)
-     .fillColor('#1f2937')
-     .text('DATOS DEL PACIENTE', leftX, y);
+    .fillColor('#1f2937')
+    .text('DATOS DEL PACIENTE', leftX, y);
 
   y += 40;
   doc.fontSize(13).fillColor('#374151');
 
   doc.text(`Nombre: ${muestra.paciente_nombre}`, leftX, y);
   doc.text(`Cédula: ${muestra.cedula}`, rightX, y);
-  
+
   y += 25;
   if (muestra.fecha_nacimiento) {
     const edad = calcularEdad(muestra.fecha_nacimiento);
     doc.text(`Edad: ${edad} años`, leftX, y);
   }
-  
+
   if (muestra.genero) {
     doc.text(`Género: ${muestra.genero}`, rightX, y);
   }
 
   y += 25;
   doc.text(`Fecha de muestra: ${new Date(muestra.fecha_toma).toLocaleDateString('es-ES')}`, leftX, y);
-  doc.text(`Estado: ${muestra.estado.toUpperCase()}`, rightX, y);
+
 
   // Tipos de muestras incluidas
   y += 60;
   doc.fontSize(16)
-     .fillColor('#1f2937')
-     .text('ANÁLISIS INCLUIDOS:', leftX, y);
+    .fillColor('#1f2937')
+    .text('ANÁLISIS INCLUIDOS:', leftX, y);
 
   y += 35;
   doc.fontSize(13).fillColor('#374151');
   detalles.forEach((detalle) => {
     doc.circle(leftX, y + 7, 4).fill('#10b981');
     doc.fillColor('#374151')
-       .text(detalle.tipo_muestra.charAt(0).toUpperCase() + detalle.tipo_muestra.slice(1), leftX + 15, y);
+      .text(detalle.tipo_muestra.charAt(0).toUpperCase() + detalle.tipo_muestra.slice(1), leftX + 15, y);
     y += 25;
   });
 
@@ -163,22 +163,22 @@ function agregarPortada(doc, muestra, detalles) {
   if (muestra.observaciones) {
     y += 30;
     doc.fontSize(14)
-       .fillColor('#1f2937')
-       .text('OBSERVACIONES GENERALES:', leftX, y);
-    
+      .fillColor('#1f2937')
+      .text('OBSERVACIONES GENERALES:', leftX, y);
+
     y += 25;
     doc.fontSize(11)
-       .fillColor('#374151')
-       .text(muestra.observaciones, leftX, y, { width: pageWidth - 200, align: 'justify' });
+      .fillColor('#374151')
+      .text(muestra.observaciones, leftX, y, { width: pageWidth - 200, align: 'justify' });
   }
 
   // Footer
   doc.fontSize(10)
-     .fillColor('#9ca3af')
-     .text('© 2024 L.U.M.I.N. - Laboratorio Clínico Blanca Trinidad', 0, pageHeight - 40, { 
-       width: pageWidth, 
-       align: 'center' 
-     });
+    .fillColor('#9ca3af')
+    .text('© 2024 L.U.M.I.N. - Laboratorio Clínico Blanca Trinidad', 0, pageHeight - 40, {
+      width: pageWidth,
+      align: 'center'
+    });
 }
 
 // Función para agregar página de sangre EN LANDSCAPE
@@ -206,12 +206,12 @@ function agregarPaginaSangre(doc, muestra, detalle) {
   if (detalle.observaciones) {
     y = doc.page.height - 120;
     doc.fontSize(12)
-       .fillColor('#1f2937')
-       .text('Observaciones:', 60, y);
-    
+      .fillColor('#1f2937')
+      .text('Observaciones:', 60, y);
+
     doc.fontSize(10)
-       .fillColor('#374151')
-       .text(detalle.observaciones, 60, y + 20, { width: doc.page.width - 120 });
+      .fillColor('#374151')
+      .text(detalle.observaciones, 60, y + 20, { width: doc.page.width - 120 });
   }
 
   agregarFooter(doc);
@@ -280,32 +280,32 @@ function agregarPaginaHeces(doc, muestra, detalle) {
 // Página genérica para otros tipos de muestra
 function agregarPaginaGenerica(doc, muestra, detalle) {
   agregarHeader(doc, muestra, `ANÁLISIS: ${detalle.tipo_muestra.toUpperCase()}`);
-  
+
   doc.fontSize(12)
-     .fillColor('#374151')
-     .text('Resultados disponibles en el sistema', 60, 200);
-  
+    .fillColor('#374151')
+    .text('Resultados disponibles en el sistema', 60, 200);
+
   agregarFooter(doc);
 }
 
 // Funciones auxiliares para LANDSCAPE
 function agregarHeader(doc, muestra, titulo) {
   const pageWidth = doc.page.width;
-  
+
   doc.fontSize(28)
-     .fillColor('#10b981')
-     .text('L.U.M.I.N.', 0, 30, { width: pageWidth, align: 'center' });
-  
+    .fillColor('#10b981')
+    .text('L.U.M.I.N.', 0, 30, { width: pageWidth, align: 'center' });
+
   doc.moveTo(60, 65).lineTo(pageWidth - 60, 65).stroke('#e5e7eb');
 
   doc.fontSize(18)
-     .fillColor('#1f2937')
-     .text(titulo, 0, 75, { width: pageWidth, align: 'center' });
+    .fillColor('#1f2937')
+    .text(titulo, 0, 75, { width: pageWidth, align: 'center' });
 
   doc.fontSize(10)
-     .fillColor('#6b7280')
-     .text(`Paciente: ${muestra.paciente_nombre} | Orden: #${muestra.id.toString().padStart(6, '0')} | Fecha: ${new Date(muestra.fecha_toma).toLocaleDateString('es-ES')}`, 
-           60, 105, { width: pageWidth - 120, align: 'center' });
+    .fillColor('#6b7280')
+    .text(`Paciente: ${muestra.paciente_nombre} | Orden: #${muestra.id.toString().padStart(6, '0')} | Fecha: ${new Date(muestra.fecha_toma).toLocaleDateString('es-ES')}`,
+      60, 105, { width: pageWidth - 120, align: 'center' });
 
   doc.moveTo(60, 125).lineTo(pageWidth - 60, 125).stroke('#e5e7eb');
 }
@@ -318,31 +318,31 @@ function dibujarTablaLandscape(doc, datos, startY) {
 
   // Header de tabla
   doc.fontSize(11)
-     .fillColor('#ffffff')
-     .rect(startX, y, colWidths.reduce((a,b) => a+b), rowHeight)
-     .fill('#10b981');
+    .fillColor('#ffffff')
+    .rect(startX, y, colWidths.reduce((a, b) => a + b), rowHeight)
+    .fill('#10b981');
 
   doc.fillColor('#ffffff')
-     .text('Parámetro', startX + 10, y + 9, { width: colWidths[0] - 20 })
-     .text('Resultado', startX + colWidths[0] + 10, y + 9, { width: colWidths[1] - 20 })
-     .text('Unidad', startX + colWidths[0] + colWidths[1] + 10, y + 9, { width: colWidths[2] - 20 });
+    .text('Parámetro', startX + 10, y + 9, { width: colWidths[0] - 20 })
+    .text('Resultado', startX + colWidths[0] + 10, y + 9, { width: colWidths[1] - 20 })
+    .text('Unidad', startX + colWidths[0] + colWidths[1] + 10, y + 9, { width: colWidths[2] - 20 });
 
   y += rowHeight;
 
   // Filas de datos
   datos.forEach((fila, index) => {
     const bgColor = index % 2 === 0 ? '#f9fafb' : '#ffffff';
-    doc.rect(startX, y, colWidths.reduce((a,b) => a+b), rowHeight).fill(bgColor);
+    doc.rect(startX, y, colWidths.reduce((a, b) => a + b), rowHeight).fill(bgColor);
 
     doc.fontSize(10)
-       .fillColor('#374151')
-       .text(fila.param, startX + 10, y + 9, { width: colWidths[0] - 20 })
-       .text(fila.valor !== undefined && fila.valor !== null && fila.valor !== '' ? String(fila.valor) : '-', 
-             startX + colWidths[0] + 10, y + 9, { width: colWidths[1] - 20 })
-       .text(fila.unidad || '-', startX + colWidths[0] + colWidths[1] + 10, y + 9, { width: colWidths[2] - 20 });
+      .fillColor('#374151')
+      .text(fila.param, startX + 10, y + 9, { width: colWidths[0] - 20 })
+      .text(fila.valor !== undefined && fila.valor !== null && fila.valor !== '' ? String(fila.valor) : '-',
+        startX + colWidths[0] + 10, y + 9, { width: colWidths[1] - 20 })
+      .text(fila.unidad || '-', startX + colWidths[0] + colWidths[1] + 10, y + 9, { width: colWidths[2] - 20 });
 
     // Bordes
-    doc.rect(startX, y, colWidths.reduce((a,b) => a+b), rowHeight).stroke('#e5e7eb');
+    doc.rect(startX, y, colWidths.reduce((a, b) => a + b), rowHeight).stroke('#e5e7eb');
 
     y += rowHeight;
   });
@@ -351,13 +351,13 @@ function dibujarTablaLandscape(doc, datos, startY) {
 function agregarFooter(doc) {
   const pageHeight = doc.page.height;
   const pageWidth = doc.page.width;
-  
+
   doc.fontSize(9)
-     .fillColor('#9ca3af')
-     .text('Este documento fue generado electrónicamente por L.U.M.I.N. - Laboratorio Clínico Blanca Trinidad', 
-           0, pageHeight - 30, { width: pageWidth, align: 'center' })
-     .text(`Generado: ${new Date().toLocaleString('es-ES')}`, 
-           0, pageHeight - 15, { width: pageWidth, align: 'center' });
+    .fillColor('#9ca3af')
+    .text('Este documento fue generado electrónicamente por L.U.M.I.N. - Laboratorio Clínico Blanca Trinidad',
+      0, pageHeight - 30, { width: pageWidth, align: 'center' })
+    .text(`Generado: ${new Date().toLocaleString('es-ES')}`,
+      0, pageHeight - 15, { width: pageWidth, align: 'center' });
 }
 
 function calcularEdad(fechaNacimiento) {

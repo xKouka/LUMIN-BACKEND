@@ -54,8 +54,8 @@ exports.crear = async (req, res) => {
 
     // Validar campos requeridos
     if (!nombre || !apellido || !cedula || !email) {
-      return res.status(400).json({ 
-        error: "Nombre, apellido, cédula y email son requeridos" 
+      return res.status(400).json({
+        error: "Nombre, apellido, cédula y email son requeridos"
       });
     }
 
@@ -137,7 +137,7 @@ exports.crear = async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Error al crear paciente" });
+    res.status(500).json({ error: "Error al crear paciente: " + error.message });
   }
 };
 

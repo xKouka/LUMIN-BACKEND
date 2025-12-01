@@ -31,6 +31,42 @@ exports.obtenerTodas = async (req, res) => {
   }
 };
 
+// Obtener muestras del paciente autenticado (para clientes)
+exports.obtenerMisMuestras = async (req, res) => {
+  try {
+    const pacienteId = req.usuario.paciente_id;
+    
+    if (!pacienteId) {
+      return res.status(400).json({ error: 'Usuario no asociado a un paciente' });
+    }
+
+    const result = await pool.query(`
+      SELECT m.*, p.nombre as paciente_nombre, p.cedula,
+             COALESCE(
+               JSON_AGG(
+                 JSON_BUILD_OBJECT(
+                   'id', dm.id,
+                   'tipo_muestra', dm.tipo_muestra,
+                   'tiene_resultados', CASE WHEN dm.resultados::text != '{}'::text THEN true ELSE false END
+                 ) ORDER BY dm.tipo_muestra
+               ) FILTER (WHERE dm.id IS NOT NULL),
+               '[]'::json
+             ) as tipos_muestras
+      FROM muestras m
+      JOIN pacientes p ON m.paciente_id = p.id
+      LEFT JOIN detalle_muestras dm ON m.id = dm.muestra_id
+      WHERE m.paciente_id = $1
+      GROUP BY m.id, p.nombre, p.cedula
+      ORDER BY m.fecha_toma DESC
+    `, [pacienteId]);
+
+    res.json(result.rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Error al obtener muestras' });
+  }
+};
+
 // Obtener muestras filtradas por tipo (usando detalle_muestras)
 exports.filtrarPorTipo = async (req, res) => {
   try {
@@ -119,7 +155,7 @@ exports.crear = async (req, res) => {
 
   try {
     const { paciente_id, observaciones, detalles } = req.body;
-    const registrado_por = req.user.id; // Del token
+    const registrado_por = req.usuario.id; // Del token
 
     if (!paciente_id || !detalles || !Array.isArray(detalles) || detalles.length === 0) {
       return res.status(400).json({ error: 'Datos incompletos' });
@@ -129,8 +165,8 @@ exports.crear = async (req, res) => {
 
     // 1. Crear la muestra principal
     const muestraResult = await client.query(
-      `INSERT INTO muestras (paciente_id, registrado_por, observaciones, estado)
-       VALUES ($1, $2, $3, 'pendiente')
+      `INSERT INTO muestras (paciente_id, registrado_por, observaciones)
+       VALUES ($1, $2, $3)
        RETURNING *`,
       [paciente_id, registrado_por, observaciones]
     );

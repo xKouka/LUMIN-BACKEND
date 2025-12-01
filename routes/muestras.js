@@ -5,6 +5,7 @@ const pdfController = require('../controllers/pdfController');
 const { verifyToken, isAdmin } = require('../middleware/auth');
 
 router.get('/', verifyToken, muestrasController.obtenerTodas);
+router.get('/mis-muestras', verifyToken, muestrasController.obtenerMisMuestras);
 router.get('/filtro/:tipo', verifyToken, muestrasController.filtrarPorTipo);
 router.get('/:id', verifyToken, muestrasController.obtenerPorId);
 router.get('/:id/pdf', verifyToken, pdfController.generarPDF);
