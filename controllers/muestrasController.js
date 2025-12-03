@@ -35,7 +35,7 @@ exports.obtenerTodas = async (req, res) => {
 exports.obtenerMisMuestras = async (req, res) => {
   try {
     const pacienteId = req.usuario.paciente_id;
-    
+
     if (!pacienteId) {
       return res.status(400).json({ error: 'Usuario no asociado a un paciente' });
     }
@@ -55,7 +55,7 @@ exports.obtenerMisMuestras = async (req, res) => {
       FROM muestras m
       JOIN pacientes p ON m.paciente_id = p.id
       LEFT JOIN detalle_muestras dm ON m.id = dm.muestra_id
-      WHERE m.paciente_id = $1
+      WHERE m.paciente_id = $1 AND m.pagado = true
       GROUP BY m.id, p.nombre, p.cedula
       ORDER BY m.fecha_toma DESC
     `, [pacienteId]);
@@ -131,6 +131,15 @@ exports.obtenerPorId = async (req, res) => {
       return res.status(404).json({ error: 'Muestra no encontrada' });
     }
 
+    // Validar acceso para clientes: solo pueden ver muestras pagadas
+    const muestraData = muestra.rows[0];
+    const esCliente = req.usuario.rol === 'cliente';
+
+    if (esCliente && !muestraData.pagado) {
+      console.log(`⛔ Cliente intentó acceder a muestra no pagada ID ${id}`);
+      return res.status(403).json({ error: 'No tienes acceso a esta muestra. Verifica el estado de pago.' });
+    }
+
     // Obtener detalles de las muestras
     const detalles = await pool.query(
       `SELECT * FROM detalle_muestras WHERE muestra_id = $1 ORDER BY tipo_muestra`,
@@ -154,7 +163,7 @@ exports.crear = async (req, res) => {
   const client = await pool.connect();
 
   try {
-    const { paciente_id, observaciones, detalles } = req.body;
+    const { paciente_id, observaciones, detalles, pagado } = req.body;
     const registrado_por = req.usuario.id; // Del token
 
     if (!paciente_id || !detalles || !Array.isArray(detalles) || detalles.length === 0) {
@@ -165,10 +174,10 @@ exports.crear = async (req, res) => {
 
     // 1. Crear la muestra principal
     const muestraResult = await client.query(
-      `INSERT INTO muestras (paciente_id, registrado_por, observaciones)
-       VALUES ($1, $2, $3)
+      `INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado)
+       VALUES ($1, $2, $3, $4)
        RETURNING *`,
-      [paciente_id, registrado_por, observaciones]
+      [paciente_id, registrado_por, observaciones, pagado !== undefined ? pagado : false]
     );
 
     const nuevaMuestra = muestraResult.rows[0];
@@ -240,7 +249,7 @@ exports.actualizar = async (req, res) => {
 
   try {
     const { id } = req.params;
-    const { estado, observaciones, detalles } = req.body;
+    const { estado, observaciones, detalles, pagado } = req.body;
 
     await client.query('BEGIN');
 
@@ -261,6 +270,12 @@ exports.actualizar = async (req, res) => {
       if (observaciones !== undefined) {
         updates.push(`observaciones = $${paramCount}`);
         values.push(observaciones);
+        paramCount++;
+      }
+
+      if (pagado !== undefined) {
+        updates.push(`pagado = $${paramCount}`);
+        values.push(pagado);
         paramCount++;
       }
 

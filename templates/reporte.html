@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Resultados</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        @page {
+            size: letter landscape;
+            margin: 1cm;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1f2937;
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 60px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .lab-info h1 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0;
+            color: #111827;
+        }
+
+        .lab-info p {
+            font-size: 10px;
+            color: #6b7280;
+            margin: 2px 0 0;
+        }
+
+        .patient-info {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f9fafb;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 1px solid #e5e7eb;
+            font-size: 11px;
+        }
+
+        .patient-info div {
+            display: flex;
+            gap: 5px;
+        }
+
+        .patient-info strong {
+            color: #374151;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #111827;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            border-left: 4px solid #2563eb;
+            padding-left: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            page-break-inside: auto;
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        tr {
+            page-break-inside: avoid;
+            page-break-after: auto;
+        }
+
+        th {
+            background-color: #10b981;
+            color: white;
+            padding: 8px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        td {
+            padding: 6px 8px;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 11px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .observations {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+
+        .observations h4 {
+            margin: 0 0 5px;
+            font-size: 11px;
+            color: #92400e;
+        }
+
+        .observations p {
+            margin: 0;
+            font-size: 10px;
+            color: #b45309;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 9px;
+            color: #9ca3af;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 10px;
+            background-color: white;
+        }
+
+        /* Utility to force page break if absolutely needed */
+        .page-break {
+            page-break-before: always;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="{{LOGO_BASE64}}" alt="Logo" class="logo">
+        <div class="lab-info">
+            <h1>LABORATORIO CLÍNICO BLANCA TRINIDAD C.A.</h1>
+            <p>RIF: J-40886313-8</p>
+        </div>
+    </div>
+
+    <div class="patient-info">
+        <div><strong>Paciente:</strong> <span>{{PACIENTE_NOMBRE}}</span></div>
+        <div><strong>Cédula:</strong> <span>{{CEDULA}}</span></div>
+        <div><strong>Orden:</strong> <span>#{{ORDEN_ID}}</span></div>
+        <div><strong>Fecha:</strong> <span>{{FECHA}}</span></div>
+    </div>
+
+    <!-- Contenido dinámico -->
+    {{CONTENT}}
+
+    <div class="footer">
+        <p>Este documento fue generado electrónicamente por L.U.M.I.N. - Laboratorio Clínico Blanca Trinidad</p>
+        <p>Generado: {{FECHA_GENERACION}}</p>
+    </div>
+</body>
+</html>
