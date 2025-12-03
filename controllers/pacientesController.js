@@ -59,6 +59,36 @@ exports.crear = async (req, res) => {
       });
     }
 
+    // Validar que el nombre solo contenga letras, espacios y Ñ
+    const nombreRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+    if (!nombreRegex.test(nombre)) {
+      return res.status(400).json({
+        error: "El nombre solo puede contener letras y espacios"
+      });
+    }
+
+    // Validar que el apellido solo contenga letras, espacios y Ñ
+    const apellidoRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+    if (!apellidoRegex.test(apellido)) {
+      return res.status(400).json({
+        error: "El apellido solo puede contener letras y espacios"
+      });
+    }
+
+    // Validar género si está presente
+    if (genero && !['masculino', 'femenino'].includes(genero)) {
+      return res.status(400).json({
+        error: "El género debe ser masculino o femenino"
+      });
+    }
+
+    // Validar teléfono si está presente
+    if (telefono && !/^[0-9+\s-]+$/.test(telefono)) {
+      return res.status(400).json({
+        error: "El teléfono solo puede contener números, espacios, + y -"
+      });
+    }
+
     // Validar que el email no exista
     const emailExistente = await pool.query(
       "SELECT id FROM usuarios WHERE email = $1",
