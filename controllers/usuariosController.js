@@ -10,7 +10,7 @@ exports.obtenerUsuarios = async (req, res) => {
         }
 
         const result = await pool.query(
-            `SELECT id, nombre, apellido, email, usuario, rol
+            `SELECT id, nombre, apellido, email, usuario, rol, estado
        FROM usuarios 
        ORDER BY id DESC`
         );
@@ -25,17 +25,25 @@ exports.obtenerUsuarios = async (req, res) => {
 // Obtener usuarios admin solamente
 exports.obtenerAdmins = async (req, res) => {
     try {
+        console.log('=== obtenerAdmins called ===');
+        console.log('Usuario autenticado:', req.usuario);
+
         // Verificar que el usuario es super admin
         if (req.usuario.rol !== 'super_admin') {
+            console.log('Acceso denegado - rol:', req.usuario.rol);
             return res.status(403).json({ error: 'Acceso denegado. Se requiere rol de super admin.' });
         }
 
+        console.log('Ejecutando consulta SQL para obtener admins...');
         const result = await pool.query(
-            `SELECT id, nombre, apellido, email, usuario, rol
+            `SELECT id, nombre, apellido, email, usuario, rol, estado
        FROM usuarios 
        WHERE rol = 'admin' OR rol = 'super_admin'
        ORDER BY id DESC`
         );
+
+        console.log('Usuarios admin encontrados:', result.rows.length);
+        console.log('Datos:', result.rows);
 
         res.json(result.rows);
     } catch (error) {
@@ -43,6 +51,7 @@ exports.obtenerAdmins = async (req, res) => {
         res.status(500).json({ error: 'Error al obtener admins' });
     }
 };
+
 
 // Crear nuevo usuario admin
 exports.crearUsuarioAdmin = async (req, res) => {
@@ -52,7 +61,7 @@ exports.crearUsuarioAdmin = async (req, res) => {
             return res.status(403).json({ error: 'Acceso denegado. Se requiere rol de super admin.' });
         }
 
-        const { nombre, apellido, email, usuario, contraseña, rol } = req.body;
+        const { nombre, apellido, email, usuario, contraseña, rol, estado } = req.body;
 
         // Validaciones
         if (!nombre || !apellido || !email || !contraseña || !rol) {
@@ -88,11 +97,12 @@ exports.crearUsuarioAdmin = async (req, res) => {
 
         // Encriptar contraseña
         const hashedPassword = await bcrypt.hash(contraseña, 10);
+        const estadoFinal = estado || 'activo';
 
         // Insertar usuario
         const nuevoUsuario = await pool.query(
-            'INSERT INTO usuarios (nombre, apellido, email, usuario, contraseña, rol) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id, nombre, apellido, email, usuario, rol',
-            [nombre, apellido, email, usuario || null, hashedPassword, rol]
+            'INSERT INTO usuarios (nombre, apellido, email, usuario, contraseña, rol, estado) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id, nombre, apellido, email, usuario, rol, estado',
+            [nombre, apellido, email, usuario || null, hashedPassword, rol, estadoFinal]
         );
 
         res.status(201).json({
@@ -114,7 +124,7 @@ exports.actualizarUsuarioAdmin = async (req, res) => {
         }
 
         const { id } = req.params;
-        const { nombre, apellido, email, usuario, contraseña, rol } = req.body;
+        const { nombre, apellido, email, usuario, contraseña, rol, estado } = req.body;
 
         // Validar que el rol sea admin o super_admin
         if (rol && rol !== 'admin' && rol !== 'super_admin') {
@@ -189,6 +199,12 @@ exports.actualizarUsuarioAdmin = async (req, res) => {
             paramCount++;
         }
 
+        if (estado) {
+            updates.push(`estado = $${paramCount}`);
+            values.push(estado);
+            paramCount++;
+        }
+
         if (updates.length === 0) {
             return res.status(400).json({ error: 'No hay datos para actualizar' });
         }
@@ -198,7 +214,7 @@ exports.actualizarUsuarioAdmin = async (req, res) => {
       UPDATE usuarios 
       SET ${updates.join(', ')} 
       WHERE id = $${paramCount}
-      RETURNING id, nombre, apellido, email, usuario, rol
+      RETURNING id, nombre, apellido, email, usuario, rol, estado
     `;
 
         const resultado = await pool.query(query, values);

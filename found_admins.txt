@@ -1,0 +1,5 @@
+=== USUARIOS SUPER ADMIN ===
+Usuario: null
+Email: superadmin@clinica.com
+Nombre: Super Admin
+-------------------

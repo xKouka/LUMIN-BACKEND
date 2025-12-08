@@ -1,12 +1,13 @@
 const pool = require('../config/database');
 const { sendTestNotificationEmail, sendStatusUpdateEmail } = require('../services/emailService');
+const { registrarProductosUsados } = require('./muestraProductosController');
 
 // Obtener todas las muestras
 exports.obtenerTodas = async (req, res) => {
   try {
     // Consulta mejorada para obtener tipos de muestras
     const result = await pool.query(`
-      SELECT m.*, p.nombre as paciente_nombre, p.cedula,
+      SELECT m.*, m.fecha_resultado, p.nombre as paciente_nombre, p.cedula, u.email, p.telefono, p.direccion,
              COALESCE(
                JSON_AGG(
                  JSON_BUILD_OBJECT(
@@ -19,8 +20,9 @@ exports.obtenerTodas = async (req, res) => {
              ) as tipos_muestras
       FROM muestras m
       JOIN pacientes p ON m.paciente_id = p.id
+      LEFT JOIN usuarios u ON p.usuario_id = u.id
       LEFT JOIN detalle_muestras dm ON m.id = dm.muestra_id
-      GROUP BY m.id, p.nombre, p.cedula
+      GROUP BY m.id, p.nombre, p.cedula, u.email, p.telefono, p.direccion
       ORDER BY m.fecha_toma DESC
     `);
 
@@ -78,7 +80,7 @@ exports.filtrarPorTipo = async (req, res) => {
     }
 
     const result = await pool.query(`
-      SELECT DISTINCT m.*, p.nombre as paciente_nombre, p.cedula,
+      SELECT DISTINCT m.*, p.nombre as paciente_nombre, p.cedula, u.email, p.telefono, p.direccion,
              COALESCE(
                JSON_AGG(
                  JSON_BUILD_OBJECT(
@@ -91,10 +93,11 @@ exports.filtrarPorTipo = async (req, res) => {
              ) as tipos_muestras
       FROM muestras m
       JOIN pacientes p ON m.paciente_id = p.id
+      LEFT JOIN usuarios u ON p.usuario_id = u.id
       JOIN detalle_muestras dm_filter ON m.id = dm_filter.muestra_id
       LEFT JOIN detalle_muestras dm_all ON m.id = dm_all.muestra_id
       WHERE dm_filter.tipo_muestra = $1
-      GROUP BY m.id, p.nombre, p.cedula
+      GROUP BY m.id, p.nombre, p.cedula, u.email, p.telefono, p.direccion
       ORDER BY m.fecha_toma DESC
     `, [tipo]);
 
@@ -140,9 +143,25 @@ exports.obtenerPorId = async (req, res) => {
       return res.status(403).json({ error: 'No tienes acceso a esta muestra. Verifica el estado de pago.' });
     }
 
-    // Obtener detalles de las muestras
+    // Obtener detalles de las muestras con sus productos
     const detalles = await pool.query(
-      `SELECT * FROM detalle_muestras WHERE muestra_id = $1 ORDER BY tipo_muestra`,
+      `SELECT dm.*, 
+        COALESCE(
+          JSON_AGG(
+            JSON_BUILD_OBJECT(
+              'producto_id', i.id,
+              'nombre', i.nombre_producto,
+              'cantidad', dmp.cantidad_usada
+            )
+          ) FILTER (WHERE dmp.id IS NOT NULL),
+          '[]'::json
+        ) as productos_usados
+       FROM detalle_muestras dm
+       LEFT JOIN detalle_muestra_productos dmp ON dm.id = dmp.detalle_muestra_id
+       LEFT JOIN inventario i ON dmp.producto_id = i.id
+       WHERE dm.muestra_id = $1 
+       GROUP BY dm.id
+       ORDER BY dm.tipo_muestra`,
       [id]
     );
 
@@ -166,8 +185,16 @@ exports.crear = async (req, res) => {
     const { paciente_id, observaciones, detalles, pagado } = req.body;
     const registrado_por = req.usuario.id; // Del token
 
+    console.log('🚀 Intento de crear muestra:', {
+      usuario_id: registrado_por,
+      paciente_id,
+      detalles_count: detalles?.length,
+      pagado
+    });
+
     if (!paciente_id || !detalles || !Array.isArray(detalles) || detalles.length === 0) {
-      return res.status(400).json({ error: 'Datos incompletos' });
+      console.error('❌ Error: Datos incompletos para crear muestra');
+      return res.status(400).json({ error: 'Datos incompletos: Se requiere paciente y al menos un detalle' });
     }
 
     await client.query('BEGIN');
@@ -185,7 +212,7 @@ exports.crear = async (req, res) => {
     // 2. Insertar los detalles de muestras
     const detallesInsertados = [];
     for (const detalle of detalles) {
-      const { tipo_muestra, resultados, observaciones: obsDetalle } = detalle;
+      const { tipo_muestra, resultados, observaciones: obsDetalle, productos } = detalle;
 
       const detalleResult = await client.query(
         `INSERT INTO detalle_muestras (muestra_id, tipo_muestra, resultados, observaciones)
@@ -194,7 +221,14 @@ exports.crear = async (req, res) => {
         [nuevaMuestra.id, tipo_muestra, JSON.stringify(resultados || {}), obsDetalle]
       );
 
-      detallesInsertados.push(detalleResult.rows[0]);
+      const detalleInsertado = detalleResult.rows[0];
+      detallesInsertados.push(detalleInsertado);
+
+      // 3. Registrar productos usados y descontar del inventario
+      if (productos && Array.isArray(productos) && productos.length > 0) {
+        console.log(`📦 Registrando ${productos.length} productos para detalle ${detalleInsertado.id}`);
+        await registrarProductosUsados(productos, detalleInsertado.id, client);
+      }
     }
 
     await client.query('COMMIT');
@@ -255,7 +289,7 @@ exports.actualizar = async (req, res) => {
 
     // 1. Actualizar muestra principal
     let muestraActualizada;
-    if (estado || observaciones !== undefined) {
+    if (estado || observaciones !== undefined || pagado !== undefined) {
       // Construir query dinámica
       const updates = [];
       const values = [id];
@@ -279,9 +313,7 @@ exports.actualizar = async (req, res) => {
         paramCount++;
       }
 
-      updates.push(`updated_at = CURRENT_TIMESTAMP`);
-
-      if (updates.length > 1) { // Si hay algo más que updated_at
+      if (updates.length > 0) {
         const result = await client.query(
           `UPDATE muestras SET ${updates.join(', ')} WHERE id = $1 RETURNING *`,
           values
@@ -297,11 +329,22 @@ exports.actualizar = async (req, res) => {
           // Actualizar detalle existente
           await client.query(
             `UPDATE detalle_muestras 
-             SET resultados = $1, observaciones = $2, updated_at = CURRENT_TIMESTAMP
+             SET resultados = $1, observaciones = $2
              WHERE id = $3 AND muestra_id = $4`,
             [JSON.stringify(detalle.resultados || {}), detalle.observaciones, detalle.id, id]
           );
         }
+      }
+    }
+
+    // 4. Update fecha_resultado if results are being updated
+    if (detalles && Array.isArray(detalles) && detalles.length > 0) {
+      const hasResults = detalles.some(d => d.resultados && Object.keys(d.resultados).length > 0);
+      if (hasResults) {
+        await client.query(
+          `UPDATE muestras SET fecha_resultado = NOW() WHERE id = $1`,
+          [id]
+        );
       }
     }
 

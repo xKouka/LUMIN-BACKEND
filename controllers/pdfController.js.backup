@@ -4,12 +4,12 @@ const fs = require('fs');
 const path = require('path');
 
 // Generar PDF usando HTML + Puppeteer
-const generarPDF = async (req, res) => {
+const generarPDF = async(req, res) =& gt; {
   try {
     const { id } = req.params;
     console.log(`🔍 Generando PDF (HTML) para muestra ID: ${id}`);
 
-    // 1. Obtener datos de la muestra solicitada y paciente
+    // 1. Obtener datos de la muestra principal y el paciente
     const muestraResult = await pool.query(
       `SELECT m.*, p.nombre as paciente_nombre, p.cedula, p.telefono, 
               p.fecha_nacimiento, p.genero, p.id as paciente_id
@@ -26,27 +26,38 @@ const generarPDF = async (req, res) => {
     const muestra = muestraResult.rows[0];
     const pacienteId = muestra.paciente_id;
 
-    // 2. Obtener detalles de la muestra específica
-    const detallesResult = await pool.query(
+    // 2. Obtener TODAS las muestras del mismo paciente (del mismo pedido)
+    const todasMuestrasResult = await pool.query(
+      `SELECT m.id as muestra_id, m.fecha_toma, m.observaciones
+       FROM muestras m
+       WHERE m.paciente_id = $1
+       ORDER BY m.fecha_toma DESC`,
+      [pacienteId]
+    );
+
+    const muestrasDelPaciente = todasMuestrasResult.rows;
+
+    // 3. Obtener TODOS los detalles de TODAS las muestras del paciente
+    const todosDetallesResult = await pool.query(
       `SELECT dm.*, m.id as muestra_id, m.fecha_toma
        FROM detalle_muestras dm
        JOIN muestras m ON dm.muestra_id = m.id
-       WHERE m.id = $1
-       ORDER BY dm.tipo_muestra`,
-      [id]
+       WHERE m.paciente_id = $1
+       ORDER BY m.fecha_toma DESC, dm.tipo_muestra`,
+      [pacienteId]
     );
 
-    const detalles = detallesResult.rows;
+    const detalles = todosDetallesResult.rows;
 
     if (detalles.length === 0) {
       return res.status(400).json({ error: 'No hay datos de muestras para generar el PDF' });
     }
 
-    // 3. Preparar Template
+    // 4. Preparar Template
     const templatePath = path.join(__dirname, '..', 'templates', 'reporte.html');
     let html = fs.readFileSync(templatePath, 'utf8');
 
-    // 4. Cargar Logo en Base64
+    // 5. Cargar Logo en Base64
     const logoPath = path.join(__dirname, '..', 'logo-laboratorio.png');
     let logoBase64 = '';
     if (fs.existsSync(logoPath)) {
@@ -54,31 +65,47 @@ const generarPDF = async (req, res) => {
       logoBase64 = `data:image/png;base64,${logoData.toString('base64')}`;
     }
 
-    // 5. Reemplazar Datos Generales
+    // 6. Reemplazar Datos Generales
     html = html.replace('{{LOGO_BASE64}}', logoBase64)
       .replace('{{PACIENTE_NOMBRE}}', muestra.paciente_nombre)
       .replace('{{CEDULA}}', muestra.cedula)
-      .replace('{{ORDEN_ID}}', `Orden #${muestra.id}`)
+      .replace('{{ORDEN_ID}}', `Pedido del paciente ${muestra.paciente_nombre}`)
       .replace('{{FECHA}}', new Date(muestra.fecha_toma).toLocaleDateString('es-ES'))
       .replace('{{FECHA_GENERACION}}', new Date().toLocaleString('es-ES'));
 
-    // 6. Generar Contenido de Tablas
+    // 7. Generar Contenido de Tablas para TODAS las muestras
     let contenidoHtml = '';
 
-    // Título de la muestra
-    contenidoHtml += '<h3 style="margin-top: 20px; color: #2563eb;">Muestra #' + muestra.id + ' - ' + new Date(muestra.fecha_toma).toLocaleDateString('es-ES') + '</h3>';
+    // Agrupar detalles por muestra
+    const detallesPorMuestra = {};
+    detalles.forEach(detalle =& gt; {
+      if (!detallesPorMuestra[detalle.muestra_id]) {
+        detallesPorMuestra[detalle.muestra_id] = [];
+      }
+      detallesPorMuestra[detalle.muestra_id].push(detalle);
+    });
 
-    if (muestra.observaciones) {
-      contenidoHtml += '<p style="font-size: 11px; color: #6b7280; font-style: italic;">' + muestra.observaciones + '</p>';
-    }
+    // Generar HTML para cada muestra
+    Object.keys(detallesPorMuestra).forEach((muestraId, index) =& gt; {
+      if (index & gt; 0) {
+        contenidoHtml += `&lt;div class="page-break"&gt;&lt;/div&gt;`;
+      }
 
-    detalles.forEach(detalle => {
-      contenidoHtml += generarSeccionHTML(detalle);
+      const muestraInfo = muestrasDelPaciente.find(m =& gt; m.muestra_id === parseInt(muestraId));
+      contenidoHtml += `&lt;h3 style="margin-top: 20px; color: #2563eb;"&gt;Muestra #${muestraId} - ${new Date(muestraInfo.fecha_toma).toLocaleDateString('es-ES')}&lt;/h3&gt;`;
+
+      if (muestraInfo.observaciones) {
+        contenidoHtml += `&lt;p style="font-size: 11px; color: #6b7280; font-style: italic;"&gt;${muestraInfo.observaciones}&lt;/p&gt;`;
+      }
+
+      detallesPorMuestra[muestraId].forEach(detalle =& gt; {
+        contenidoHtml += generarSeccionHTML(detalle);
+      });
     });
 
     html = html.replace('{{CONTENT}}', contenidoHtml);
 
-    // 6. Generar PDF con Puppeteer
+    // 8. Generar PDF con Puppeteer
     const browser = await puppeteer.launch({
       headless: 'new',
       args: ['--no-sandbox', '--disable-setuid-sandbox'] // Necesario en algunos entornos servidor
@@ -104,12 +131,12 @@ const generarPDF = async (req, res) => {
 
     await browser.close();
 
-    // 7. Enviar Respuesta
+    // 9. Enviar Respuesta
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', `attachment; filename=Reporte_${muestra.paciente_nombre.replace(/\s+/g, '_')}.pdf`);
     res.send(pdfBuffer);
 
-    console.log('✅ PDF generado correctamente con Puppeteer');
+    console.log('✅ PDF generado correctamente con Puppeteer (todas las muestras del paciente)');
 
   } catch (error) {
     console.error('❌ Error al generar PDF:', error);
@@ -119,7 +146,7 @@ const generarPDF = async (req, res) => {
 
 // Helper para generar HTML de cada sección
 function generarSeccionHTML(detalle) {
-  let html = `<div class="section">`;
+  let html = `&lt;div class="section"&gt;`;
 
   // Título
   let titulo = '';
@@ -129,44 +156,45 @@ function generarSeccionHTML(detalle) {
     case 'heces': titulo = 'COPROLÓGICO'; break;
     default: titulo = detalle.tipo_muestra.toUpperCase();
   }
-  html += `<div class="section-title">${titulo}</div>`;
+  html += `&lt;div class="section-title"&gt;${titulo}&lt;/div&gt;`;
 
   // Tabla
-  html += `<table>
-    <thead>
-      <tr>
-        <th style="width: 35%">Parámetro</th>
-        <th style="width: 20%">Resultado</th>
-        <th style="width: 15%">Unidad</th>
-        <th style="width: 30%">Valores de Referencia</th>
-      </tr>
-    </thead>
-    <tbody>`;
+  html += `&lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th style="width: 35%"&gt;Parámetro&lt;/th&gt;
+        &lt;th style="width: 20%"&gt;Resultado&lt;/th&gt;
+        &lt;th style="width: 15%"&gt;Unidad&lt;/th&gt;
+        &lt;th style="width: 30%"&gt;Valores de Referencia&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;`;
 
   const resultados = detalle.resultados || {};
   const filas = obtenerFilasPorTipo(detalle.tipo_muestra, resultados);
 
-  filas.forEach(fila => {
-    html += `<tr>
-      <td>${fila.param}</td>
-      <td>${fila.valor !== undefined && fila.valor !== null && fila.valor !== '' ? fila.valor : '-'}</td>
-      <td>${fila.unidad || '-'}</td>
-      <td>${fila.referencia || '-'}</td>
-    </tr>`;
-  });
+  filas.forEach(fila =& gt; {
+    html += `&lt;tr&gt;
+      &lt;td&gt;${fila.param}&lt;/td&gt;
+      &lt;td&gt;${fila.valor !== undefined & amp;& amp; fila.valor !== null & amp;& amp; fila.valor !== '' ? fila.valor : '-'
+  }& lt;/td&gt;
+      & lt; td & gt;${ fila.unidad || '-' }& lt;/td&gt;
+      & lt; td & gt;${ fila.referencia || '-' }& lt;/td&gt;
+    & lt;/tr&gt;`;
+});
 
-  html += `</tbody></table>`;
+html += `&lt;/tbody&gt;&lt;/table&gt;`;
 
-  // Observaciones
-  if (detalle.observaciones) {
-    html += `<div class="observations">
-      <h4>Observaciones:</h4>
-      <p>${detalle.observaciones}</p>
-    </div>`;
-  }
+// Observaciones
+if (detalle.observaciones) {
+  html += `&lt;div class="observations"&gt;
+      &lt;h4&gt;Observaciones:&lt;/h4&gt;
+      &lt;p&gt;${detalle.observaciones}&lt;/p&gt;
+    &lt;/div&gt;`;
+}
 
-  html += `</div>`;
-  return html;
+html += `&lt;/div&gt;`;
+return html;
 }
 
 // Helper para definir las filas según el tipo de muestra

@@ -6,7 +6,7 @@ exports.obtenerProductosPorTipo = async (req, res) => {
         const { tipo } = req.params;
 
         const result = await pool.query(`
-      SELECT tmp.*, i.nombre as producto_nombre, i.stock_actual
+      SELECT tmp.*, i.nombre as producto_nombre, i.cantidad
       FROM tipo_muestra_productos tmp
       JOIN inventario i ON tmp.producto_id = i.id
       WHERE tmp.tipo_muestra = $1
@@ -92,18 +92,18 @@ exports.registrarProductosUsados = async (productos, detalleId, client) => {
             // Restar del inventario
             await client.query(
                 `UPDATE inventario 
-         SET stock_actual = stock_actual - $1
+         SET cantidad = cantidad - $1
          WHERE id = $2`,
                 [prod.cantidad, prod.producto_id]
             );
 
             // Verificar que no quedó en negativo
             const checkStock = await client.query(
-                'SELECT stock_actual FROM inventario WHERE id = $1',
+                'SELECT cantidad FROM inventario WHERE id = $1',
                 [prod.producto_id]
             );
 
-            if (checkStock.rows[0].stock_actual < 0) {
+            if (checkStock.rows[0].cantidad < 0) {
                 throw new Error(`Stock insuficiente para el producto ID ${prod.producto_id}`);
             }
         }

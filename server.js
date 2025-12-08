@@ -14,6 +14,8 @@ app.use('/api/pacientes', require('./routes/pacientes'));
 app.use('/api/muestras', require('./routes/muestras'));
 app.use('/api/inventario', require('./routes/inventario'));
 app.use('/api/usuarios', require('./routes/usuarios'));
+app.use('/api/reportes', require('./routes/reportes'));
+app.use('/api/backup', require('./routes/backup'));
 
 // Ruta de prueba
 app.get('/api/health', (req, res) => {

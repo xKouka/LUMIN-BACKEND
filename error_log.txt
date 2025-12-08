@@ -1,0 +1,30 @@
+2025-12-08T02:22:40.743Z - Update Error: column "updated_at" of relation "muestras" does not exist
+error: column "updated_at" of relation "muestras" does not exist
+    at C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\BACKEND\node_modules\pg\lib\client.js:545:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async exports.actualizar (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\BACKEND\controllers\muestrasController.js:319:24)
+
+2025-12-08T02:22:43.327Z - Update Error: column "updated_at" of relation "muestras" does not exist
+error: column "updated_at" of relation "muestras" does not exist
+    at C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\BACKEND\node_modules\pg\lib\client.js:545:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async exports.actualizar (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\BACKEND\controllers\muestrasController.js:319:24)
+
+2025-12-08T02:22:50.529Z - Update Error: column "updated_at" of relation "muestras" does not exist
+error: column "updated_at" of relation "muestras" does not exist
+    at C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\BACKEND\node_modules\pg\lib\client.js:545:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async exports.actualizar (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\BACKEND\controllers\muestrasController.js:319:24)
+
+2025-12-08T02:23:21.683Z - Update Error: column "updated_at" of relation "muestras" does not exist
+error: column "updated_at" of relation "muestras" does not exist
+    at C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\BACKEND\node_modules\pg\lib\client.js:545:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async exports.actualizar (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\BACKEND\controllers\muestrasController.js:319:24)
+
+2025-12-08T02:23:22.917Z - Update Error: column "updated_at" of relation "muestras" does not exist
+error: column "updated_at" of relation "muestras" does not exist
+    at C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\BACKEND\node_modules\pg\lib\client.js:545:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async exports.actualizar (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\BACKEND\controllers\muestrasController.js:319:24)
+
