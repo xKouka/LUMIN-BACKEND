@@ -1,19 +1,28 @@
 const { Pool } = require('pg');
+const { getManager } = require('./database-manager');
 require('dotenv').config();
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
+// Obtener el database manager (singleton)
+const dbManager = getManager();
+
+// Para compatibilidad con código existente, exportamos un objeto que se comporta como el pool
+// pero internamente usa el database manager
+const pool = {
+  query: async (text, params) => {
+    return await dbManager.query(text, params);
   },
-});
-
-pool.on('connect', () => {
-  console.log('✓ Conectado a PostgreSQL (Neon)');
-});
-
-pool.on('error', (err) => {
-  console.error('Error en pool de conexión:', err);
-});
+  connect: async () => {
+    return await dbManager.connect();
+  },
+  end: async () => {
+    return await dbManager.close();
+  },
+  on: (event, callback) => {
+    // Mantener compatibilidad con event listeners
+    if (dbManager.pgPool) {
+      dbManager.pgPool.on(event, callback);
+    }
+  }
+};
 
 module.exports = pool;

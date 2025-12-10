@@ -1,35 +1,74 @@
 const pool = require('../config/database');
-const { sendTestNotificationEmail, sendStatusUpdateEmail } = require('../services/emailService');
+const { getManager } = require('../config/database-manager');
+const { sendTestNotificationEmail, sendStatusUpdateEmail, sendPaymentConfirmationEmail } = require('../services/emailService');
 const { registrarProductosUsados } = require('./muestraProductosController');
 
 // Obtener todas las muestras
 exports.obtenerTodas = async (req, res) => {
   try {
-    // Consulta mejorada para obtener tipos de muestras
-    const result = await pool.query(`
-      SELECT m.*, m.fecha_resultado, p.nombre as paciente_nombre, p.cedula, u.email, p.telefono, p.direccion,
-             COALESCE(
-               JSON_AGG(
-                 JSON_BUILD_OBJECT(
-                   'id', dm.id,
-                   'tipo_muestra', dm.tipo_muestra,
-                   'tiene_resultados', CASE WHEN dm.resultados::text != '{}'::text THEN true ELSE false END
-                 ) ORDER BY dm.tipo_muestra
-               ) FILTER (WHERE dm.id IS NOT NULL),
-               '[]'::json
-             ) as tipos_muestras
-      FROM muestras m
-      JOIN pacientes p ON m.paciente_id = p.id
-      LEFT JOIN usuarios u ON p.usuario_id = u.id
-      LEFT JOIN detalle_muestras dm ON m.id = dm.muestra_id
-      GROUP BY m.id, p.nombre, p.cedula, u.email, p.telefono, p.direccion
-      ORDER BY m.fecha_toma DESC
-    `);
+    const dbManager = getManager();
+    const isOnline = dbManager.isOnline;
 
-    res.json(result.rows);
+    if (isOnline) {
+      // PostgreSQL query with JSON functions
+      const result = await pool.query(`
+        SELECT m.*, m.fecha_resultado, p.nombre as paciente_nombre, p.cedula, u.email, p.telefono, p.direccion,
+               COALESCE(
+                 JSON_AGG(
+                   JSON_BUILD_OBJECT(
+                     'id', dm.id,
+                     'tipo_muestra', dm.tipo_muestra,
+                     'tiene_resultados', CASE WHEN dm.resultados::text != '{}'::text THEN true ELSE false END
+                   ) ORDER BY dm.tipo_muestra
+                 ) FILTER (WHERE dm.id IS NOT NULL),
+                 '[]'::json
+               ) as tipos_muestras
+        FROM muestras m
+        JOIN pacientes p ON m.paciente_id = p.id
+        LEFT JOIN usuarios u ON p.usuario_id = u.id
+        LEFT JOIN detalle_muestras dm ON m.id = dm.muestra_id
+        GROUP BY m.id, p.nombre, p.cedula, u.email, p.telefono, p.direccion
+        ORDER BY m.fecha_toma DESC
+      `);
+      res.json(result.rows);
+    } else {
+      // SQLite compatible query - fetch separately and combine in JavaScript
+      const muestrasResult = await pool.query(`
+        SELECT m.*, m.fecha_resultado, p.nombre as paciente_nombre, p.cedula, u.email, p.telefono, p.direccion
+        FROM muestras m
+        JOIN pacientes p ON m.paciente_id = p.id
+        LEFT JOIN usuarios u ON p.usuario_id = u.id
+        ORDER BY m.fecha_toma DESC
+      `);
+
+      // For each muestra, fetch its detalle_muestras
+      const muestrasConDetalles = await Promise.all(
+        muestrasResult.rows.map(async (muestra) => {
+          const detallesResult = await pool.query(`
+            SELECT id, tipo_muestra, resultados
+            FROM detalle_muestras
+            WHERE muestra_id = ?
+            ORDER BY tipo_muestra
+          `, [muestra.id]);
+
+          const tipos_muestras = detallesResult.rows.map(dm => ({
+            id: dm.id,
+            tipo_muestra: dm.tipo_muestra,
+            tiene_resultados: dm.resultados && JSON.stringify(dm.resultados) !== '{}'
+          }));
+
+          return {
+            ...muestra,
+            tipos_muestras
+          };
+        })
+      );
+
+      res.json(muestrasConDetalles);
+    }
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Error al obtener muestras' });
+    console.error('Error al obtener muestras:', error);
+    res.status(500).json({ error: 'Error al obtener muestras: ' + error.message });
   }
 };
 
@@ -42,30 +81,68 @@ exports.obtenerMisMuestras = async (req, res) => {
       return res.status(400).json({ error: 'Usuario no asociado a un paciente' });
     }
 
-    const result = await pool.query(`
-      SELECT m.*, p.nombre as paciente_nombre, p.cedula,
-             COALESCE(
-               JSON_AGG(
-                 JSON_BUILD_OBJECT(
-                   'id', dm.id,
-                   'tipo_muestra', dm.tipo_muestra,
-                   'tiene_resultados', CASE WHEN dm.resultados::text != '{}'::text THEN true ELSE false END
-                 ) ORDER BY dm.tipo_muestra
-               ) FILTER (WHERE dm.id IS NOT NULL),
-               '[]'::json
-             ) as tipos_muestras
-      FROM muestras m
-      JOIN pacientes p ON m.paciente_id = p.id
-      LEFT JOIN detalle_muestras dm ON m.id = dm.muestra_id
-      WHERE m.paciente_id = $1 AND m.pagado = true
-      GROUP BY m.id, p.nombre, p.cedula
-      ORDER BY m.fecha_toma DESC
-    `, [pacienteId]);
+    const dbManager = getManager();
+    const isOnline = dbManager.isOnline;
 
-    res.json(result.rows);
+    if (isOnline) {
+      // PostgreSQL query
+      const result = await pool.query(`
+        SELECT m.*, p.nombre as paciente_nombre, p.cedula,
+               COALESCE(
+                 JSON_AGG(
+                   JSON_BUILD_OBJECT(
+                     'id', dm.id,
+                     'tipo_muestra', dm.tipo_muestra,
+                     'tiene_resultados', CASE WHEN dm.resultados::text != '{}'::text THEN true ELSE false END
+                   ) ORDER BY dm.tipo_muestra
+                 ) FILTER (WHERE dm.id IS NOT NULL),
+                 '[]'::json
+               ) as tipos_muestras
+        FROM muestras m
+        JOIN pacientes p ON m.paciente_id = p.id
+        LEFT JOIN detalle_muestras dm ON m.id = dm.muestra_id
+        WHERE m.paciente_id = $1 AND m.pagado = true
+        GROUP BY m.id, p.nombre, p.cedula
+        ORDER BY m.fecha_toma DESC
+      `, [pacienteId]);
+      res.json(result.rows);
+    } else {
+      // SQLite compatible query
+      const muestrasResult = await pool.query(`
+        SELECT m.*, p.nombre as paciente_nombre, p.cedula
+        FROM muestras m
+        JOIN pacientes p ON m.paciente_id = p.id
+        WHERE m.paciente_id = ? AND m.pagado = 1
+        ORDER BY m.fecha_toma DESC
+      `, [pacienteId]);
+
+      const muestrasConDetalles = await Promise.all(
+        muestrasResult.rows.map(async (muestra) => {
+          const detallesResult = await pool.query(`
+            SELECT id, tipo_muestra, resultados
+            FROM detalle_muestras
+            WHERE muestra_id = ?
+            ORDER BY tipo_muestra
+          `, [muestra.id]);
+
+          const tipos_muestras = detallesResult.rows.map(dm => ({
+            id: dm.id,
+            tipo_muestra: dm.tipo_muestra,
+            tiene_resultados: dm.resultados && JSON.stringify(dm.resultados) !== '{}'
+          }));
+
+          return {
+            ...muestra,
+            tipos_muestras
+          };
+        })
+      );
+
+      res.json(muestrasConDetalles);
+    }
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Error al obtener muestras' });
+    console.error('Error al obtener muestras:', error);
+    res.status(500).json({ error: 'Error al obtener muestras: ' + error.message });
   }
 };
 
@@ -79,32 +156,72 @@ exports.filtrarPorTipo = async (req, res) => {
       return exports.obtenerTodas(req, res);
     }
 
-    const result = await pool.query(`
-      SELECT DISTINCT m.*, p.nombre as paciente_nombre, p.cedula, u.email, p.telefono, p.direccion,
-             COALESCE(
-               JSON_AGG(
-                 JSON_BUILD_OBJECT(
-                   'id', dm_all.id,
-                   'tipo_muestra', dm_all.tipo_muestra,
-                   'tiene_resultados', CASE WHEN dm_all.resultados::text != '{}'::text THEN true ELSE false END
-                 ) ORDER BY dm_all.tipo_muestra
-               ) FILTER (WHERE dm_all.id IS NOT NULL),
-               '[]'::json
-             ) as tipos_muestras
-      FROM muestras m
-      JOIN pacientes p ON m.paciente_id = p.id
-      LEFT JOIN usuarios u ON p.usuario_id = u.id
-      JOIN detalle_muestras dm_filter ON m.id = dm_filter.muestra_id
-      LEFT JOIN detalle_muestras dm_all ON m.id = dm_all.muestra_id
-      WHERE dm_filter.tipo_muestra = $1
-      GROUP BY m.id, p.nombre, p.cedula, u.email, p.telefono, p.direccion
-      ORDER BY m.fecha_toma DESC
-    `, [tipo]);
+    const dbManager = getManager();
+    const isOnline = dbManager.isOnline;
 
-    res.json(result.rows);
+    if (isOnline) {
+      // PostgreSQL query
+      const result = await pool.query(`
+        SELECT DISTINCT m.*, p.nombre as paciente_nombre, p.cedula, u.email, p.telefono, p.direccion,
+               COALESCE(
+                 JSON_AGG(
+                   JSON_BUILD_OBJECT(
+                     'id', dm_all.id,
+                     'tipo_muestra', dm_all.tipo_muestra,
+                     'tiene_resultados', CASE WHEN dm_all.resultados::text != '{}'::text THEN true ELSE false END
+                   ) ORDER BY dm_all.tipo_muestra
+                 ) FILTER (WHERE dm_all.id IS NOT NULL),
+                 '[]'::json
+               ) as tipos_muestras
+        FROM muestras m
+        JOIN pacientes p ON m.paciente_id = p.id
+        LEFT JOIN usuarios u ON p.usuario_id = u.id
+        JOIN detalle_muestras dm_filter ON m.id = dm_filter.muestra_id
+        LEFT JOIN detalle_muestras dm_all ON m.id = dm_all.muestra_id
+        WHERE dm_filter.tipo_muestra = $1
+        GROUP BY m.id, p.nombre, p.cedula, u.email, p.telefono, p.direccion
+        ORDER BY m.fecha_toma DESC
+      `, [tipo]);
+      res.json(result.rows);
+    } else {
+      // SQLite compatible query
+      const muestrasResult = await pool.query(`
+        SELECT DISTINCT m.*, p.nombre as paciente_nombre, p.cedula, u.email, p.telefono, p.direccion
+        FROM muestras m
+        JOIN pacientes p ON m.paciente_id = p.id
+        LEFT JOIN usuarios u ON p.usuario_id = u.id
+        JOIN detalle_muestras dm_filter ON m.id = dm_filter.muestra_id
+        WHERE dm_filter.tipo_muestra = ?
+        ORDER BY m.fecha_toma DESC
+      `, [tipo]);
+
+      const muestrasConDetalles = await Promise.all(
+        muestrasResult.rows.map(async (muestra) => {
+          const detallesResult = await pool.query(`
+            SELECT id, tipo_muestra, resultados
+            FROM detalle_muestras
+            WHERE muestra_id = ?
+            ORDER BY tipo_muestra
+          `, [muestra.id]);
+
+          const tipos_muestras = detallesResult.rows.map(dm => ({
+            id: dm.id,
+            tipo_muestra: dm.tipo_muestra,
+            tiene_resultados: dm.resultados && JSON.stringify(dm.resultados) !== '{}'
+          }));
+
+          return {
+            ...muestra,
+            tipos_muestras
+          };
+        })
+      );
+
+      res.json(muestrasConDetalles);
+    }
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Error al filtrar muestras' });
+    console.error('Error al filtrar muestras:', error);
+    res.status(500).json({ error: 'Error al filtrar muestras: ' + error.message });
   }
 };
 
@@ -201,10 +318,10 @@ exports.crear = async (req, res) => {
 
     // 1. Crear la muestra principal
     const muestraResult = await client.query(
-      `INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado)
-       VALUES ($1, $2, $3, $4)
+      `INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
        RETURNING *`,
-      [paciente_id, registrado_por, observaciones, pagado !== undefined ? pagado : false]
+      [paciente_id, registrado_por, observaciones, pagado !== undefined ? pagado : false, new Date()]
     );
 
     const nuevaMuestra = muestraResult.rows[0];
@@ -248,6 +365,15 @@ exports.crear = async (req, res) => {
           paciente.nombre,
           tiposExamenes,
           observaciones
+        );
+      }
+
+      // Si la muestra se creó como PAGADA, enviar confirmación de pago
+      if (pagado && paciente && paciente.email) {
+        await sendPaymentConfirmationEmail(
+          paciente.email,
+          paciente.nombre,
+          nuevaMuestra.id
         );
       }
     } catch (emailError) {
@@ -380,6 +506,30 @@ exports.actualizar = async (req, res) => {
         }
       } catch (emailError) {
         console.error('Error al enviar email de estado:', emailError);
+      }
+    }
+
+    // Enviar notificación de PAGO si se marcó como pagado
+    if (pagado === true) {
+      try {
+        const pacienteResult = await pool.query(
+          `SELECT p.nombre, p.email
+           FROM pacientes p 
+           JOIN muestras m ON p.id = m.paciente_id 
+           WHERE m.id = $1`,
+          [id]
+        );
+        const paciente = pacienteResult.rows[0];
+
+        if (paciente && paciente.email) {
+          await sendPaymentConfirmationEmail(
+            paciente.email,
+            paciente.nombre,
+            id
+          );
+        }
+      } catch (emailError) {
+        console.error('Error al enviar email de pago:', emailError);
       }
     }
 

@@ -1,0 +1,297 @@
+[2025-12-10T04:43:18.246Z] Error: NOT NULL constraint failed: muestras.fecha_toma
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado)
+       VALUES ($1, $2, $3, $4)
+       RETURNING *
+Params: [16,33,null,true]
+Stack: SqliteError: NOT NULL constraint failed: muestras.fecha_toma
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:81:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:43:19.839Z] Error: NOT NULL constraint failed: muestras.fecha_toma
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado)
+       VALUES ($1, $2, $3, $4)
+       RETURNING *
+Params: [16,33,null,true]
+Stack: SqliteError: NOT NULL constraint failed: muestras.fecha_toma
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:81:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:46:06.809Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [16,33,null,true,"2025-12-10T04:46:06.808Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:81:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:47:04.627Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [16,33,null,false,"2025-12-10T04:47:04.626Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:81:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:47:05.638Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [16,33,null,false,"2025-12-10T04:47:05.637Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:81:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:52:37.448Z] Error: unrecognized token: ":"
+Query: SELECT dm.*, 
+        COALESCE(
+          JSON_AGG(
+            JSON_BUILD_OBJECT(
+              'producto_id', i.id,
+              'nombre', i.nombre_producto,
+              'cantidad', dmp.cantidad_usada
+            )
+          ) FILTER (WHERE dmp.id IS NOT NULL),
+          '[]'::json
+        ) as productos_usados
+       FROM detalle_muestras dm
+       LEFT JOIN detalle_muestra_productos dmp ON dm.id = dmp.detalle_muestra_id
+       LEFT JOIN inventario i ON dmp.producto_id = i.id
+       WHERE dm.muestra_id = $1 
+       GROUP BY dm.id
+       ORDER BY dm.tipo_muestra
+Params: ["67"]
+Stack: SqliteError: unrecognized token: ":"
+    at Database.prepare (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\node_modules\better-sqlite3\lib\methods\wrappers.js:5:21)
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:83:30)
+    at DatabaseManager.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\database-manager.js:111:45)
+    at Object.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\database.js:12:28)
+    at exports.obtenerPorId (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:264:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:52:51.188Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [17,33,null,true,"2025-12-10T04:52:51.187Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:88:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:52:52.090Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [17,33,null,true,"2025-12-10T04:52:52.089Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:88:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:52:52.679Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [17,33,null,true,"2025-12-10T04:52:52.678Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:88:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:52:52.843Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [17,33,null,true,"2025-12-10T04:52:52.842Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:88:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:52:52.985Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [17,33,null,true,"2025-12-10T04:52:52.983Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:88:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:52:53.138Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [17,33,null,true,"2025-12-10T04:52:53.137Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:88:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:52:53.281Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [17,33,null,true,"2025-12-10T04:52:53.279Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:88:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:52:53.567Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [17,33,null,true,"2025-12-10T04:52:53.565Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:88:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:52:53.705Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [17,33,null,true,"2025-12-10T04:52:53.704Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:88:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:52:53.850Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [17,33,null,true,"2025-12-10T04:52:53.848Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:88:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:52:53.971Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [17,33,null,true,"2025-12-10T04:52:53.969Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:88:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:52:54.112Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [17,33,null,true,"2025-12-10T04:52:54.111Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:88:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:52:54.234Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [17,33,null,true,"2025-12-10T04:52:54.232Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:88:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:52:54.378Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [17,33,null,true,"2025-12-10T04:52:54.376Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:88:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:52:54.526Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [17,33,null,true,"2025-12-10T04:52:54.525Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:88:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:52:54.647Z] Error: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+Query: INSERT INTO muestras (paciente_id, registrado_por, observaciones, pagado, fecha_toma)
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *
+Params: [17,33,null,true,"2025-12-10T04:52:54.646Z"]
+Stack: TypeError: SQLite3 can only bind numbers, strings, bigints, buffers, and null
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:88:27)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:320:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:56:10.958Z] Error: unrecognized token: ":"
+Query: SELECT dm.*, 
+        COALESCE(
+          JSON_AGG(
+            JSON_BUILD_OBJECT(
+              'producto_id', i.id,
+              'nombre', i.nombre_producto,
+              'cantidad', dmp.cantidad_usada
+            )
+          ) FILTER (WHERE dmp.id IS NOT NULL),
+          '[]'::json
+        ) as productos_usados
+       FROM detalle_muestras dm
+       LEFT JOIN detalle_muestra_productos dmp ON dm.id = dmp.detalle_muestra_id
+       LEFT JOIN inventario i ON dmp.producto_id = i.id
+       WHERE dm.muestra_id = $1 
+       GROUP BY dm.id
+       ORDER BY dm.tipo_muestra
+Params: ["67"]
+Stack: SqliteError: unrecognized token: ":"
+    at Database.prepare (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\node_modules\better-sqlite3\lib\methods\wrappers.js:5:21)
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:87:30)
+    at DatabaseManager.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\database-manager.js:111:45)
+    at Object.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\database.js:12:28)
+    at exports.obtenerPorId (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:264:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:56:20.944Z] Error: no such column: email
+Query: SELECT nombre, email FROM pacientes WHERE id = $1
+Params: [16]
+Stack: SqliteError: no such column: email
+    at Database.prepare (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\node_modules\better-sqlite3\lib\methods\wrappers.js:5:21)
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:87:30)
+    at DatabaseManager.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\database-manager.js:111:45)
+    at Object.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\database.js:12:28)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:356:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:56:31.729Z] Error: no such column: email
+Query: SELECT nombre, email FROM pacientes WHERE id = $1
+Params: [16]
+Stack: SqliteError: no such column: email
+    at Database.prepare (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\node_modules\better-sqlite3\lib\methods\wrappers.js:5:21)
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:87:30)
+    at DatabaseManager.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\database-manager.js:111:45)
+    at Object.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\database.js:12:28)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:356:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
+[2025-12-10T04:56:58.911Z] Error: no such column: email
+Query: SELECT nombre, email FROM pacientes WHERE id = $1
+Params: [16]
+Stack: SqliteError: no such column: email
+    at Database.prepare (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\node_modules\better-sqlite3\lib\methods\wrappers.js:5:21)
+    at SQLiteDatabase.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\sqlite-database.js:87:30)
+    at DatabaseManager.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\database-manager.js:111:45)
+    at Object.query (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\config\database.js:12:28)
+    at exports.crear (C:\Users\oagui\Documents\GitHub\ClinicaBlancaTrinidad\LUMIN-BACKEND\controllers\muestrasController.js:356:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+----------------------------------------
