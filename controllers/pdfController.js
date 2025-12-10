@@ -1,10 +1,10 @@
-const puppeteer = require('puppeteer');
 const pool = require('../config/database');
 const fs = require('fs');
 const path = require('path');
 
 // Generar PDF usando HTML + Puppeteer
 const generarPDF = async (req, res) => {
+  let browser;
   try {
     const { id } = req.params;
     console.log(`🔍 Generando PDF (HTML) para muestra ID: ${id}`);
@@ -24,7 +24,6 @@ const generarPDF = async (req, res) => {
     }
 
     const muestra = muestraResult.rows[0];
-    const pacienteId = muestra.paciente_id;
 
     // 2. Obtener detalles de la muestra específica
     const detallesResult = await pool.query(
@@ -78,22 +77,24 @@ const generarPDF = async (req, res) => {
 
     html = html.replace('{{CONTENT}}', contenidoHtml);
 
-    // 6. Generar PDF con Puppeteer
-    let browser;
-
+    // 7. Lanzar Browser (Condicional)
     if (process.env.NODE_ENV === 'production') {
       // Configuración para Vercel (AWS Lambda)
       const chromium = require('@sparticuz/chromium');
       const puppeteerCore = require('puppeteer-core');
 
+      chromium.setHeadlessMode = true;
+      chromium.setGraphicsMode = false;
+
       browser = await puppeteerCore.launch({
-        args: chromium.args,
+        args: [...chromium.args, '--no-sandbox', '--disable-setuid-sandbox', '--font-render-hinting=none'],
         defaultViewport: chromium.defaultViewport,
         executablePath: await chromium.executablePath(),
         headless: chromium.headless,
       });
     } else {
-      // Configuración local
+      // Configuración local: require dinámico importado solo aquí
+      const puppeteer = require('puppeteer');
       browser = await puppeteer.launch({
         headless: 'new',
         args: ['--no-sandbox', '--disable-setuid-sandbox']
@@ -103,7 +104,10 @@ const generarPDF = async (req, res) => {
     const page = await browser.newPage();
 
     // Cargar contenido HTML
-    await page.setContent(html, { waitUntil: 'networkidle0' });
+    await page.setContent(html, {
+      waitUntil: 'networkidle0',
+      timeout: 30000
+    });
 
     // Generar PDF
     const pdfBuffer = await page.pdf({
@@ -121,16 +125,17 @@ const generarPDF = async (req, res) => {
 
     await browser.close();
 
-    // 7. Enviar Respuesta
+    // 8. Enviar Respuesta
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', `attachment; filename=Reporte_${muestra.paciente_nombre.replace(/\s+/g, '_')}.pdf`);
     res.send(pdfBuffer);
 
-    console.log('✅ PDF generado correctamente con Puppeteer');
+    console.log('✅ PDF generado correctamente');
 
   } catch (error) {
+    if (browser) await browser.close();
     console.error('❌ Error al generar PDF:', error);
-    res.status(500).json({ error: 'Error al generar PDF: ' + error.message });
+    res.status(500).json({ error: 'Error al generar PDF: ' + error.message, stack: error.stack });
   }
 };
 
