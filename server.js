@@ -78,10 +78,9 @@ const server = app.listen(PORT, async () => {
   // Intentar descargar datos iniciales a SQLite (Solo si NO es producción)
   try {
     if (process.env.NODE_ENV === 'production') {
-      console.log('🌍 Modo Producción: Saltando descarga a SQLite (Offline mode desactivado)');
+      console.log('🌍 Modo Producción: Saltando completamente lógica de SQLite');
     } else {
       const dbManager = getManager();
-
       // Re-verificar conectividad de forma explícita
       const isOnline = await dbManager.checkConnectivity();
 

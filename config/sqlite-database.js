@@ -12,6 +12,10 @@ class SQLiteDatabase {
    * Inicializa la base de datos SQLite
    */
   initialize() {
+    if (process.env.NODE_ENV === 'production') {
+      console.log('🌍 Modo Producción: SQLite desactivado');
+      return null;
+    }
     try {
       // Lazy load better-sqlite3 solo cuando se inicializa (dev mode)
       const Database = require('better-sqlite3');

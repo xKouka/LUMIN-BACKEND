@@ -172,9 +172,8 @@ const sendTestNotificationEmail = async (recipientEmail, nombrePaciente, tipoExa
             </div>
 
             <div style="text-align: center;">
-              <a href={`${ process.env.FRONTEND_URL || 'http://localhost:3000'
-  }/login`} class="button" style="color: #ffffff !important;">Ver Mis Muestras</a >
-            </div >
+              <a href="${process.env.FRONTEND_URL || 'http://localhost:3000'}/login" class="button" style="color: #ffffff !important;">Ver Mis Muestras</a>
+            </div>
           </div >
 
           < !--Footer -->
@@ -206,7 +205,7 @@ const sendPaymentConfirmationEmail = async (recipientEmail, nombrePaciente, idMu
     if (!isConnected) return { success: false, error: 'No internet connection', queued: true };
 
     const mailOptions = {
-      from: `"${process.env.SMTP_FROM_NAME}" < ${ process.env.SMTP_FROM_EMAIL }> `,
+      from: `"${process.env.SMTP_FROM_NAME}" < ${process.env.SMTP_FROM_EMAIL}> `,
       to: recipientEmail,
       subject: '✅ Pago Confirmado - L.U.M.I.N.',
       html: `
@@ -239,7 +238,7 @@ const sendPaymentConfirmationEmail = async (recipientEmail, nombrePaciente, idMu
             </div>
 
             <div style="text-align: center;">
-              <a href={`${process.env.FRONTEND_URL || 'http://localhost:3000'}/login`} class="button" style="color: #ffffff !important;">Ver Resultados</a>
+              <a href="${process.env.FRONTEND_URL || 'http://localhost:3000'}/login" class="button" style="color: #ffffff !important;">Ver Resultados</a>
             </div>
           </div>
           <div class="footer">
@@ -272,9 +271,9 @@ const sendStatusUpdateEmail = async (recipientEmail, nombrePaciente, estado, idM
     const color = estado === 'completado' ? '#10b981' : '#f59e0b';
 
     const mailOptions = {
-      from: `"${process.env.SMTP_FROM_NAME}" < ${ process.env.SMTP_FROM_EMAIL }> `,
+      from: `"${process.env.SMTP_FROM_NAME}" < ${process.env.SMTP_FROM_EMAIL}> `,
       to: recipientEmail,
-      subject: `🔄 Actualización de Estado - Muestra #${ idMuestra } `,
+      subject: `🔄 Actualización de Estado - Muestra #${idMuestra} `,
       html: `
   < !DOCTYPE html >
     <html>
@@ -293,7 +292,7 @@ const sendStatusUpdateEmail = async (recipientEmail, nombrePaciente, estado, idM
             <p>El estado de tu muestra <strong>#${idMuestra}</strong> ha cambiado a:</p>
             <h3 style="color: ${color}; text-align: center; text-transform: uppercase;">${estadoTexto}</h3>
             <div style="text-align: center; margin-top: 30px;">
-              <a href={`${process.env.FRONTEND_URL || 'http://localhost:3000'}/login`} class="button" style="color: #ffffff !important;">Ver Detalles</a>
+              <a href="${process.env.FRONTEND_URL || 'http://localhost:3000'}/login" class="button" style="color: #ffffff !important;">Ver Detalles</a>
             </div>
           </div>
         </div>

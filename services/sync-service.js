@@ -6,7 +6,12 @@ const path = require('path');
 class SyncService {
     constructor() {
         this.dbManager = getManager();
-        this.sqlite = getSQLiteInstance();
+        // En producción, no inicializamos SQLite para evitar crashes
+        if (process.env.NODE_ENV !== 'production') {
+            this.sqlite = getSQLiteInstance();
+        } else {
+            this.sqlite = null;
+        }
         this.isSyncing = false;
         this.syncLog = [];
     }
@@ -40,6 +45,11 @@ class SyncService {
         if (!this.dbManager.isOnline) {
             console.log('⚠️  No hay conexión para descargar datos');
             return { success: false, message: 'No connection available' };
+        }
+
+        if (!this.sqlite) {
+            console.log('🌍 Modo Producción: No hay base de datos local para descargar');
+            return { success: false, message: 'SQLite not available in production' };
         }
 
         try {
@@ -174,6 +184,11 @@ class SyncService {
         if (!this.dbManager.isOnline) {
             console.log('⚠️  No hay conexión - no se puede sincronizar');
             return { success: false, message: 'No connection available' };
+        }
+
+        if (!this.sqlite) {
+            console.log('🌍 Modo Producción: No hay base de datos local para sincronizar');
+            return { success: false, message: 'SQLite not available in production' };
         }
 
         this.isSyncing = true;
