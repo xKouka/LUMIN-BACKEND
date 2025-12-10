@@ -79,10 +79,27 @@ const generarPDF = async (req, res) => {
     html = html.replace('{{CONTENT}}', contenidoHtml);
 
     // 6. Generar PDF con Puppeteer
-    const browser = await puppeteer.launch({
-      headless: 'new',
-      args: ['--no-sandbox', '--disable-setuid-sandbox'] // Necesario en algunos entornos servidor
-    });
+    let browser;
+
+    if (process.env.NODE_ENV === 'production') {
+      // Configuración para Vercel (AWS Lambda)
+      const chromium = require('@sparticuz/chromium');
+      const puppeteerCore = require('puppeteer-core');
+
+      browser = await puppeteerCore.launch({
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath(),
+        headless: chromium.headless,
+      });
+    } else {
+      // Configuración local
+      browser = await puppeteer.launch({
+        headless: 'new',
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+      });
+    }
+
     const page = await browser.newPage();
 
     // Cargar contenido HTML
@@ -99,7 +116,7 @@ const generarPDF = async (req, res) => {
         bottom: '1cm',
         left: '1cm'
       },
-      displayHeaderFooter: false // Usamos nuestro propio header/footer en HTML si es necesario, o CSS print
+      displayHeaderFooter: false
     });
 
     await browser.close();

@@ -6018,3 +6018,1618 @@ Params In: [7,"test","consumible",121,10,null,"2025-12-09T09:13:17.008Z"]
 Adapted Out: [7,"test","consumible",121,10,null,"2025-12-09T09:13:17.008Z"]
 Types: ["number","string","string","number","number","object","string"]
 ---
+QueryType: INSERT
+Params In: [3,"Cliente",null,"cucu","cliente@test.com","$2b$10$6cY.y2TG1GfFmvYIYILenO/.7XXEmKhLBv3JIZsOZ92.6uZQ3svMe","cliente","activo","2025-11-21T17:39:37.502Z"]
+Adapted Out: [3,"Cliente",null,"cucu","cliente@test.com","$2b$10$6cY.y2TG1GfFmvYIYILenO/.7XXEmKhLBv3JIZsOZ92.6uZQ3svMe","cliente","activo","2025-11-21T17:39:37.502Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [4,"Admin",null,"cucuadmin","admin@test.com","$2b$10$rjuG2im3tTIIsXTbhqlhpuVV33kWlpjyqLO6nk1bDATtKRk7It2xu","admin","activo","2025-11-21T17:46:00.114Z"]
+Adapted Out: [4,"Admin",null,"cucuadmin","admin@test.com","$2b$10$rjuG2im3tTIIsXTbhqlhpuVV33kWlpjyqLO6nk1bDATtKRk7It2xu","admin","activo","2025-11-21T17:46:00.114Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [18,"santiago fermin",null,"30539731","santiagofermin69@gmail.com","$2b$10$Mxu1MLt4juyNP3b5UTrXo.HpGFjEFSfwdQBoERNunD4szULVgbkEq","cliente","activo","2025-11-25T20:24:50.413Z"]
+Adapted Out: [18,"santiago fermin",null,"30539731","santiagofermin69@gmail.com","$2b$10$Mxu1MLt4juyNP3b5UTrXo.HpGFjEFSfwdQBoERNunD4szULVgbkEq","cliente","activo","2025-11-25T20:24:50.413Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [20,"Yemnel Torcat",null,"12294821","ytorcat.4821@unimar.edu.ve","$2b$10$0K/GTzJjHhuw2KvbJaQk3OaWTdC3zhOs5lW3MX1OfzKLB/HxsLb9G","cliente","activo","2025-11-25T21:03:24.164Z"]
+Adapted Out: [20,"Yemnel Torcat",null,"12294821","ytorcat.4821@unimar.edu.ve","$2b$10$0K/GTzJjHhuw2KvbJaQk3OaWTdC3zhOs5lW3MX1OfzKLB/HxsLb9G","cliente","activo","2025-11-25T21:03:24.164Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [22,"Daniel  Lopez",null,"28492710","dmlg.20.04.01@gmail.com","$2b$10$nReQFUce3BOYCsjl59SAue2jVxY44XvbUqsA87bAjoyQw46lFdB2e","cliente","activo","2025-11-28T06:08:03.525Z"]
+Adapted Out: [22,"Daniel  Lopez",null,"28492710","dmlg.20.04.01@gmail.com","$2b$10$nReQFUce3BOYCsjl59SAue2jVxY44XvbUqsA87bAjoyQw46lFdB2e","cliente","activo","2025-11-28T06:08:03.525Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [27,"juan soriano",null,"12345678","juanpablosoriano01@gmail.com","$2b$10$HS0QcgESRRVVnShKSpTnh.EhL.WvQwEASIKWwJ/IlaHhqb8/Afx9C","cliente","activo","2025-12-01T18:36:38.839Z"]
+Adapted Out: [27,"juan soriano",null,"12345678","juanpablosoriano01@gmail.com","$2b$10$HS0QcgESRRVVnShKSpTnh.EhL.WvQwEASIKWwJ/IlaHhqb8/Afx9C","cliente","activo","2025-12-01T18:36:38.839Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [32,"Super Admin",null,null,"superadmin@clinica.com","$2b$10$D16pkFhRcXQAMutSQNguCOuVNIEekR1riqv/y.0Bp8DcUDOO6bLwu","super_admin","activo","2025-12-02T17:30:40.789Z"]
+Adapted Out: [32,"Super Admin",null,null,"superadmin@clinica.com","$2b$10$D16pkFhRcXQAMutSQNguCOuVNIEekR1riqv/y.0Bp8DcUDOO6bLwu","super_admin","activo","2025-12-02T17:30:40.789Z"]
+Types: ["number","string","object","object","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [33,"Oscar",null,"admin@admin.com","oaguiar2102@gmail.com","$2b$10$y6YQHuGI3TKf1oO1qcwNR.wWH3QwP6xwkXChFiRfOBq4lK18fX/um","admin","activo","2025-12-02T17:47:18.665Z"]
+Adapted Out: [33,"Oscar",null,"admin@admin.com","oaguiar2102@gmail.com","$2b$10$y6YQHuGI3TKf1oO1qcwNR.wWH3QwP6xwkXChFiRfOBq4lK18fX/um","admin","activo","2025-12-02T17:47:18.665Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [34,"oscar perez",null,"30277092","Osvagai@gmail.com","$2b$10$DLiV2KELsa4aX2Yaf/jl7.G0BWLIb6Ce9A.tW6iQljqlJY57rK9DC","cliente","activo","2025-12-03T18:15:47.917Z"]
+Adapted Out: [34,"oscar perez",null,"30277092","Osvagai@gmail.com","$2b$10$DLiV2KELsa4aX2Yaf/jl7.G0BWLIb6Ce9A.tW6iQljqlJY57rK9DC","cliente","activo","2025-12-03T18:15:47.917Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [35,"Angel Aguilar",null,"296555544","aaguilar.5043@unimar.edu.ve","$2b$10$k4/NnKDdpGjU4NYDVoAi8O0wlM.dlVEZidBnxOvzclksskHuTmzry","cliente","activo","2025-12-05T20:09:16.804Z"]
+Adapted Out: [35,"Angel Aguilar",null,"296555544","aaguilar.5043@unimar.edu.ve","$2b$10$k4/NnKDdpGjU4NYDVoAi8O0wlM.dlVEZidBnxOvzclksskHuTmzry","cliente","activo","2025-12-05T20:09:16.804Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [36,"Max Gomez",null,"30539919","maxB.gomezM@gmail.com","$2b$10$euIWTupRe7ywxsbh9kPDPe1PhpzWeB2HKiLa/XqPaEAq5SQY5HgVm","cliente","activo","2025-12-09T09:17:04.480Z"]
+Adapted Out: [36,"Max Gomez",null,"30539919","maxB.gomezM@gmail.com","$2b$10$euIWTupRe7ywxsbh9kPDPe1PhpzWeB2HKiLa/XqPaEAq5SQY5HgVm","cliente","activo","2025-12-09T09:17:04.480Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [38,"andriuw Gomez",null,"11111111","andriuw200@gmail.com","$2b$10$g66UiqYI8Nm3KYJyK2jvoOa3R0QSVIWTHoXzPQfrZQQQ42HEA0abK","cliente","activo","2025-12-10T10:01:17.414Z"]
+Adapted Out: [38,"andriuw Gomez",null,"11111111","andriuw200@gmail.com","$2b$10$g66UiqYI8Nm3KYJyK2jvoOa3R0QSVIWTHoXzPQfrZQQQ42HEA0abK","cliente","activo","2025-12-10T10:01:17.414Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [39,"MATIAS CONTRERAS",null,"212121212121","oaguiar.7092@unimar.edu.ve","$2b$10$35zYHYBBDwZfLgdaOs0UpOIvKsxrX1AqmGHJpGSgxkmTXD9eexAbC","cliente","activo","2025-12-10T10:32:08.055Z"]
+Adapted Out: [39,"MATIAS CONTRERAS",null,"212121212121","oaguiar.7092@unimar.edu.ve","$2b$10$35zYHYBBDwZfLgdaOs0UpOIvKsxrX1AqmGHJpGSgxkmTXD9eexAbC","cliente","activo","2025-12-10T10:32:08.055Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [8,"santiago fermin","fermin","30539731","2004-09-16T04:00:00.000Z","masculino","12345678",null,18,"2025-11-25T20:24:50.616Z"]
+Adapted Out: [8,"santiago fermin","fermin","30539731","2004-09-16T04:00:00.000Z","masculino","12345678",null,18,"2025-11-25T20:24:50.616Z"]
+Types: ["number","string","string","string","string","string","string","object","number","string"]
+---
+QueryType: INSERT
+Params In: [10,"Yemnel Torcat","Torcat","12294821","1974-08-07T04:00:00.000Z","femenino","1234567",null,20,"2025-11-25T21:03:24.257Z"]
+Adapted Out: [10,"Yemnel Torcat","Torcat","12294821","1974-08-07T04:00:00.000Z","femenino","1234567",null,20,"2025-11-25T21:03:24.257Z"]
+Types: ["number","string","string","string","string","string","string","object","number","string"]
+---
+QueryType: INSERT
+Params In: [12,"Daniel  Lopez","Lopez","28492710","2001-04-20T04:00:00.000Z","masculino","04121166833","Los robles",22,"2025-11-28T06:08:03.649Z"]
+Adapted Out: [12,"Daniel  Lopez","Lopez","28492710","2001-04-20T04:00:00.000Z","masculino","04121166833","Los robles",22,"2025-11-28T06:08:03.649Z"]
+Types: ["number","string","string","string","string","string","string","string","number","string"]
+---
+QueryType: INSERT
+Params In: [13,"juan soriano","soriano","12345678","2001-02-01T04:00:00.000Z","masculino","21212121212","apure",27,"2025-12-01T18:36:38.930Z"]
+Adapted Out: [13,"juan soriano","soriano","12345678","2001-02-01T04:00:00.000Z","masculino","21212121212","apure",27,"2025-12-01T18:36:38.930Z"]
+Types: ["number","string","string","string","string","string","string","string","number","string"]
+---
+QueryType: INSERT
+Params In: [14,"oscar perez","perez","30277092","2015-01-03T04:30:00.000Z","masculino","32323","21212",34,"2025-12-03T18:15:48.004Z"]
+Adapted Out: [14,"oscar perez","perez","30277092","2015-01-03T04:30:00.000Z","masculino","32323","21212",34,"2025-12-03T18:15:48.004Z"]
+Types: ["number","string","string","string","string","string","string","string","number","string"]
+---
+QueryType: INSERT
+Params In: [15,"Angel Aguilar","Aguilar","296555544","2000-11-01T04:00:00.000Z","masculino","12121212121",null,35,"2025-12-05T20:09:16.915Z"]
+Adapted Out: [15,"Angel Aguilar","Aguilar","296555544","2000-11-01T04:00:00.000Z","masculino","12121212121",null,35,"2025-12-05T20:09:16.915Z"]
+Types: ["number","string","string","string","string","string","string","object","number","string"]
+---
+QueryType: INSERT
+Params In: [16,"Max Gomez","Gomez","30539919","2004-08-05T04:00:00.000Z","masculino",null,null,36,"2025-12-09T09:17:04.584Z"]
+Adapted Out: [16,"Max Gomez","Gomez","30539919","2004-08-05T04:00:00.000Z","masculino",null,null,36,"2025-12-09T09:17:04.584Z"]
+Types: ["number","string","string","string","string","string","object","object","number","string"]
+---
+QueryType: INSERT
+Params In: [18,"andriuw Gomez","Gomez","11111111","2010-12-15T04:30:00.000Z","masculino",null,"Los robles",38,"2025-12-10T10:01:17.424Z"]
+Adapted Out: [18,"andriuw Gomez","Gomez","11111111","2010-12-15T04:30:00.000Z","masculino",null,"Los robles",38,"2025-12-10T10:01:17.424Z"]
+Types: ["number","string","string","string","string","string","object","string","number","string"]
+---
+QueryType: INSERT
+Params In: [19,"MATIAS CONTRERAS","CONTRERAS","212121212121","2015-12-11T04:30:00.000Z","masculino","212121212121","2240 Nw 114th Ave",39,"2025-12-10T10:32:08.071Z"]
+Adapted Out: [19,"MATIAS CONTRERAS","CONTRERAS","212121212121","2015-12-11T04:30:00.000Z","masculino","212121212121","2240 Nw 114th Ave",39,"2025-12-10T10:32:08.071Z"]
+Types: ["number","string","string","string","string","string","string","string","number","string"]
+---
+QueryType: INSERT
+Params In: [16,8,"2025-11-26T09:22:44.030Z","21212",1,null,null]
+Adapted Out: [16,8,"2025-11-26T09:22:44.030Z","21212",1,null,null]
+Types: ["number","number","string","string","number","object","object"]
+---
+QueryType: INSERT
+Params In: [17,12,"2025-11-28T06:46:39.313Z","21",1,null,4]
+Adapted Out: [17,12,"2025-11-28T06:46:39.313Z","21",1,null,4]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [18,8,"2025-11-29T06:04:24.719Z","21",1,null,4]
+Adapted Out: [18,8,"2025-11-29T06:04:24.719Z","21",1,null,4]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [19,13,"2025-12-01T18:42:36.897Z","212",1,null,4]
+Adapted Out: [19,13,"2025-12-01T18:42:36.897Z","212",1,null,4]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [20,13,"2025-12-01T19:28:27.108Z","32",1,null,4]
+Adapted Out: [20,13,"2025-12-01T19:28:27.108Z","32",1,null,4]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [21,13,"2025-12-01T20:11:49.971Z","2121",1,null,4]
+Adapted Out: [21,13,"2025-12-01T20:11:49.971Z","2121",1,null,4]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [22,13,"2025-12-03T09:03:44.008Z","21",1,null,33]
+Adapted Out: [22,13,"2025-12-03T09:03:44.008Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [24,13,"2025-12-03T09:55:23.766Z","21",1,null,33]
+Adapted Out: [24,13,"2025-12-03T09:55:23.766Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [25,14,"2025-12-03T18:16:20.744Z","3232",1,null,33]
+Adapted Out: [25,14,"2025-12-03T18:16:20.744Z","3232",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [26,12,"2025-12-05T19:38:07.342Z","2121",0,null,33]
+Adapted Out: [26,12,"2025-12-05T19:38:07.342Z","2121",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [27,12,"2025-12-05T19:40:00.407Z","21221",1,null,33]
+Adapted Out: [27,12,"2025-12-05T19:40:00.407Z","21221",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [28,15,"2025-12-05T20:23:32.834Z",null,0,null,33]
+Adapted Out: [28,15,"2025-12-05T20:23:32.834Z",null,0,null,33]
+Types: ["number","number","string","object","number","object","number"]
+---
+QueryType: INSERT
+Params In: [35,14,"2025-12-05T21:55:45.090Z","21",0,null,33]
+Adapted Out: [35,14,"2025-12-05T21:55:45.090Z","21",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [36,14,"2025-12-05T23:02:28.568Z","2121",0,null,33]
+Adapted Out: [36,14,"2025-12-05T23:02:28.568Z","2121",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [37,14,"2025-12-05T23:06:27.766Z","21",0,null,33]
+Adapted Out: [37,14,"2025-12-05T23:06:27.766Z","21",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [38,14,"2025-12-05T23:10:23.767Z","21",0,null,33]
+Adapted Out: [38,14,"2025-12-05T23:10:23.767Z","21",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [41,14,"2025-12-05T23:11:03.795Z","21",0,null,33]
+Adapted Out: [41,14,"2025-12-05T23:11:03.795Z","21",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [42,14,"2025-12-06T00:48:09.539Z","44",1,null,33]
+Adapted Out: [42,14,"2025-12-06T00:48:09.539Z","44",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [43,13,"2025-12-06T00:48:44.995Z","21",1,null,33]
+Adapted Out: [43,13,"2025-12-06T00:48:44.995Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [45,14,"2025-12-06T00:49:53.206Z","21",1,null,33]
+Adapted Out: [45,14,"2025-12-06T00:49:53.206Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [48,14,"2025-12-08T05:38:35.901Z","21",1,null,32]
+Adapted Out: [48,14,"2025-12-08T05:38:35.901Z","21",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [49,14,"2025-12-08T06:16:58.823Z","212121",1,null,32]
+Adapted Out: [49,14,"2025-12-08T06:16:58.823Z","212121",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [50,14,"2025-12-08T07:30:25.057Z","1212",1,null,32]
+Adapted Out: [50,14,"2025-12-08T07:30:25.057Z","1212",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [51,14,"2025-12-08T08:07:34.252Z","",1,null,32]
+Adapted Out: [51,14,"2025-12-08T08:07:34.252Z","",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [52,14,"2025-12-08T09:46:05.827Z","offiline",1,null,32]
+Adapted Out: [52,14,"2025-12-08T09:46:05.827Z","offiline",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [53,14,"2025-12-08T09:48:38.776Z","21",1,null,32]
+Adapted Out: [53,14,"2025-12-08T09:48:38.776Z","21",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [54,14,"2025-12-08T09:48:39.662Z","21",1,null,32]
+Adapted Out: [54,14,"2025-12-08T09:48:39.662Z","21",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [55,14,"2025-12-08T09:48:40.042Z","21",1,null,32]
+Adapted Out: [55,14,"2025-12-08T09:48:40.042Z","21",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [56,14,"2025-12-08T09:48:40.699Z","21",1,null,32]
+Adapted Out: [56,14,"2025-12-08T09:48:40.699Z","21",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [57,14,"2025-12-08T09:48:40.873Z","offlineeeeeee",1,null,32]
+Adapted Out: [57,14,"2025-12-08T09:48:40.873Z","offlineeeeeee",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [58,14,"2025-12-08T09:48:41.515Z","offlineeeeeee",1,null,32]
+Adapted Out: [58,14,"2025-12-08T09:48:41.515Z","offlineeeeeee",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [59,16,"2025-12-09T09:18:59.237Z","prueba",1,null,32]
+Adapted Out: [59,16,"2025-12-09T09:18:59.237Z","prueba",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [60,16,"2025-12-09T09:19:25.753Z","21",0,"2025-12-10T04:23:05.354Z",32]
+Adapted Out: [60,16,"2025-12-09T09:19:25.753Z","21",0,"2025-12-10T04:23:05.354Z",32]
+Types: ["number","number","string","string","number","string","number"]
+---
+QueryType: INSERT
+Params In: [63,16,"2025-12-10T08:30:52.234Z","21",1,null,33]
+Adapted Out: [63,16,"2025-12-10T08:30:52.234Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [64,16,"2025-12-10T08:33:33.373Z","21",1,null,33]
+Adapted Out: [64,16,"2025-12-10T08:33:33.373Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [65,16,"2025-12-10T08:34:01.500Z","22222",1,null,33]
+Adapted Out: [65,16,"2025-12-10T08:34:01.500Z","22222",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [67,16,"2025-12-10T08:38:36.420Z",null,1,null,33]
+Adapted Out: [67,16,"2025-12-10T08:38:36.420Z",null,1,null,33]
+Types: ["number","number","string","object","number","object","number"]
+---
+QueryType: INSERT
+Params In: [68,16,"2025-12-10T08:56:20.940Z",null,1,null,33]
+Adapted Out: [68,16,"2025-12-10T08:56:20.940Z",null,1,null,33]
+Types: ["number","number","string","object","number","object","number"]
+---
+QueryType: INSERT
+Params In: [69,16,"2025-12-10T08:56:31.726Z",null,0,null,33]
+Adapted Out: [69,16,"2025-12-10T08:56:31.726Z",null,0,null,33]
+Types: ["number","number","string","object","number","object","number"]
+---
+QueryType: INSERT
+Params In: [70,16,"2025-12-10T08:56:58.908Z",null,1,null,33]
+Adapted Out: [70,16,"2025-12-10T08:56:58.908Z",null,1,null,33]
+Types: ["number","number","string","object","number","object","number"]
+---
+QueryType: INSERT
+Params In: [5,16,"sangre","{\"hcm\":\"2121\",\"vcm\":\"121\",\"chcm\":\"2121\",\"glucosa\":\"2121\",\"plaquetas\":\"212\",\"leucocitos\":\"12\",\"hematocrito\":\"2121\",\"hemoglobina\":\"2121\"}","wwww"]
+Adapted Out: [5,16,"sangre","{\"hcm\":\"2121\",\"vcm\":\"121\",\"chcm\":\"2121\",\"glucosa\":\"2121\",\"plaquetas\":\"212\",\"leucocitos\":\"12\",\"hematocrito\":\"2121\",\"hemoglobina\":\"2121\"}","wwww"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [6,17,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [6,17,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [7,18,"orina","{\"ph\":\"2121\",\"color\":\"Amarillo\",\"sangre\":\"Trazas\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"2121\",\"bacterias\":\"Ausentes\",\"cristales\":\"2121\",\"proteinas\":\"Negativo\",\"leucocitos\":\"2121\"}","21"]
+Adapted Out: [7,18,"orina","{\"ph\":\"2121\",\"color\":\"Amarillo\",\"sangre\":\"Trazas\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"2121\",\"bacterias\":\"Ausentes\",\"cristales\":\"2121\",\"proteinas\":\"Negativo\",\"leucocitos\":\"2121\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [8,19,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [8,19,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [9,20,"sangre","{\"hcm\":\"32\",\"vcm\":\"32\",\"chcm\":\"32\",\"glucosa\":\"32\",\"plaquetas\":\"32\",\"leucocitos\":\"32\",\"hematocrito\":\"32\",\"hemoglobina\":\"32\"}","32"]
+Adapted Out: [9,20,"sangre","{\"hcm\":\"32\",\"vcm\":\"32\",\"chcm\":\"32\",\"glucosa\":\"32\",\"plaquetas\":\"32\",\"leucocitos\":\"32\",\"hematocrito\":\"32\",\"hemoglobina\":\"32\"}","32"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [10,21,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"16.7\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"20.8\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [10,21,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"16.7\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"20.8\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [11,22,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [11,22,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [12,24,"sangre","{\"hcm\":\"20.9\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [12,24,"sangre","{\"hcm\":\"20.9\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [13,25,"sangre","{\"hcm\":\"32\",\"vcm\":\"32\",\"chcm\":\"32\",\"glucosa\":\"32\",\"plaquetas\":\"32\",\"leucocitos\":\"32\",\"hematocrito\":\"32\",\"hemoglobina\":\"32\"}","32"]
+Adapted Out: [13,25,"sangre","{\"hcm\":\"32\",\"vcm\":\"32\",\"chcm\":\"32\",\"glucosa\":\"32\",\"plaquetas\":\"32\",\"leucocitos\":\"32\",\"hematocrito\":\"32\",\"hemoglobina\":\"32\"}","32"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [14,26,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [14,26,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [15,27,"orina","{\"ph\":\"21\",\"color\":\"Amarillo\",\"sangre\":\"Trazas\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"21\",\"bacterias\":\"Escasas\",\"cristales\":\"21\",\"proteinas\":\"Trazas\",\"leucocitos\":\"21\"}","21"]
+Adapted Out: [15,27,"orina","{\"ph\":\"21\",\"color\":\"Amarillo\",\"sangre\":\"Trazas\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"21\",\"bacterias\":\"Escasas\",\"cristales\":\"21\",\"proteinas\":\"Trazas\",\"leucocitos\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [16,28,"sangre","{\"hcm\":\"21.8\",\"vcm\":\"22\",\"chcm\":\"22\",\"glucosa\":\"22\",\"plaquetas\":\"22\",\"leucocitos\":\"22\",\"hematocrito\":\"2\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [16,28,"sangre","{\"hcm\":\"21.8\",\"vcm\":\"22\",\"chcm\":\"22\",\"glucosa\":\"22\",\"plaquetas\":\"22\",\"leucocitos\":\"22\",\"hematocrito\":\"2\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [23,35,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [23,35,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [24,36,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [24,36,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [25,37,"sangre","{\"hcm\":\"20.9\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [25,37,"sangre","{\"hcm\":\"20.9\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [26,38,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [26,38,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [29,41,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [29,41,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [30,42,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [30,42,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [31,43,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [31,43,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [33,45,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [33,45,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [36,48,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [36,48,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [37,49,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [37,49,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [38,50,"orina","{\"ph\":\"21\",\"color\":\"Ámbar\",\"sangre\":\"Negativo\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"21\",\"bacterias\":\"Ausentes\",\"cristales\":\"21\",\"proteinas\":\"Trazas\",\"leucocitos\":\"21\"}","21"]
+Adapted Out: [38,50,"orina","{\"ph\":\"21\",\"color\":\"Ámbar\",\"sangre\":\"Negativo\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"21\",\"bacterias\":\"Ausentes\",\"cristales\":\"21\",\"proteinas\":\"Trazas\",\"leucocitos\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [39,51,"sangre","{}",""]
+Adapted Out: [39,51,"sangre","{}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [40,52,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [40,52,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [41,53,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [41,53,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [42,54,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [42,54,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [43,55,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","offline"]
+Adapted Out: [43,55,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","offline"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [44,56,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","offline"]
+Adapted Out: [44,56,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","offline"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [45,57,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"2121\"}","21"]
+Adapted Out: [45,57,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"2121\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [46,58,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"2121\"}","21"]
+Adapted Out: [46,58,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"2121\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [47,59,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [47,59,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [48,60,"heces","{\"ph\":\"21\",\"moco\":\"Ausente\",\"color\":\"Marrón\",\"parasitos\":\"21\",\"leucocitos\":\"21\",\"consistencia\":\"Líquida\",\"sangre_oculta\":\"Negativo\",\"restos_alimenticios\":\"21\"}","21"]
+Adapted Out: [48,60,"heces","{\"ph\":\"21\",\"moco\":\"Ausente\",\"color\":\"Marrón\",\"parasitos\":\"21\",\"leucocitos\":\"21\",\"consistencia\":\"Líquida\",\"sangre_oculta\":\"Negativo\",\"restos_alimenticios\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [51,63,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [51,63,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [52,64,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [52,64,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [53,65,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [53,65,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [55,67,"sangre","{}",""]
+Adapted Out: [55,67,"sangre","{}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [56,68,"sangre","{}",""]
+Adapted Out: [56,68,"sangre","{}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [57,69,"sangre","{}",""]
+Adapted Out: [57,69,"sangre","{}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [58,70,"sangre","{}",""]
+Adapted Out: [58,70,"sangre","{}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [2,"jeringa","material",0,2,null,"2025-12-09T09:13:44.409Z"]
+Adapted Out: [2,"jeringa","material",0,2,null,"2025-12-09T09:13:44.409Z"]
+Types: ["number","string","string","number","number","object","string"]
+---
+QueryType: INSERT
+Params In: [3,"test","reactivo",202,52,null,"2025-11-28T07:57:52.177Z"]
+Adapted Out: [3,"test","reactivo",202,52,null,"2025-11-28T07:57:52.177Z"]
+Types: ["number","string","string","number","number","object","string"]
+---
+QueryType: INSERT
+Params In: [5,"212","reactivo",921,5,null,"2025-12-01T10:25:12.174Z"]
+Adapted Out: [5,"212","reactivo",921,5,null,"2025-12-01T10:25:12.174Z"]
+Types: ["number","string","string","number","number","object","string"]
+---
+QueryType: INSERT
+Params In: [6,"prueba","reactivo",0,5,null,"2025-12-06T01:11:22.183Z"]
+Adapted Out: [6,"prueba","reactivo",0,5,null,"2025-12-06T01:11:22.183Z"]
+Types: ["number","string","string","number","number","object","string"]
+---
+QueryType: INSERT
+Params In: [7,"test","consumible",121,10,null,"2025-12-09T09:13:17.008Z"]
+Adapted Out: [7,"test","consumible",121,10,null,"2025-12-09T09:13:17.008Z"]
+Types: ["number","string","string","number","number","object","string"]
+---
+QueryType: INSERT
+Params In: [3,"Cliente",null,"cucu","cliente@test.com","$2b$10$6cY.y2TG1GfFmvYIYILenO/.7XXEmKhLBv3JIZsOZ92.6uZQ3svMe","cliente","activo","2025-11-21T17:39:37.502Z"]
+Adapted Out: [3,"Cliente",null,"cucu","cliente@test.com","$2b$10$6cY.y2TG1GfFmvYIYILenO/.7XXEmKhLBv3JIZsOZ92.6uZQ3svMe","cliente","activo","2025-11-21T17:39:37.502Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [4,"Admin",null,"cucuadmin","admin@test.com","$2b$10$rjuG2im3tTIIsXTbhqlhpuVV33kWlpjyqLO6nk1bDATtKRk7It2xu","admin","activo","2025-11-21T17:46:00.114Z"]
+Adapted Out: [4,"Admin",null,"cucuadmin","admin@test.com","$2b$10$rjuG2im3tTIIsXTbhqlhpuVV33kWlpjyqLO6nk1bDATtKRk7It2xu","admin","activo","2025-11-21T17:46:00.114Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [18,"santiago fermin",null,"30539731","santiagofermin69@gmail.com","$2b$10$Mxu1MLt4juyNP3b5UTrXo.HpGFjEFSfwdQBoERNunD4szULVgbkEq","cliente","activo","2025-11-25T20:24:50.413Z"]
+Adapted Out: [18,"santiago fermin",null,"30539731","santiagofermin69@gmail.com","$2b$10$Mxu1MLt4juyNP3b5UTrXo.HpGFjEFSfwdQBoERNunD4szULVgbkEq","cliente","activo","2025-11-25T20:24:50.413Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [20,"Yemnel Torcat",null,"12294821","ytorcat.4821@unimar.edu.ve","$2b$10$0K/GTzJjHhuw2KvbJaQk3OaWTdC3zhOs5lW3MX1OfzKLB/HxsLb9G","cliente","activo","2025-11-25T21:03:24.164Z"]
+Adapted Out: [20,"Yemnel Torcat",null,"12294821","ytorcat.4821@unimar.edu.ve","$2b$10$0K/GTzJjHhuw2KvbJaQk3OaWTdC3zhOs5lW3MX1OfzKLB/HxsLb9G","cliente","activo","2025-11-25T21:03:24.164Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [22,"Daniel  Lopez",null,"28492710","dmlg.20.04.01@gmail.com","$2b$10$nReQFUce3BOYCsjl59SAue2jVxY44XvbUqsA87bAjoyQw46lFdB2e","cliente","activo","2025-11-28T06:08:03.525Z"]
+Adapted Out: [22,"Daniel  Lopez",null,"28492710","dmlg.20.04.01@gmail.com","$2b$10$nReQFUce3BOYCsjl59SAue2jVxY44XvbUqsA87bAjoyQw46lFdB2e","cliente","activo","2025-11-28T06:08:03.525Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [27,"juan soriano",null,"12345678","juanpablosoriano01@gmail.com","$2b$10$HS0QcgESRRVVnShKSpTnh.EhL.WvQwEASIKWwJ/IlaHhqb8/Afx9C","cliente","activo","2025-12-01T18:36:38.839Z"]
+Adapted Out: [27,"juan soriano",null,"12345678","juanpablosoriano01@gmail.com","$2b$10$HS0QcgESRRVVnShKSpTnh.EhL.WvQwEASIKWwJ/IlaHhqb8/Afx9C","cliente","activo","2025-12-01T18:36:38.839Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [32,"Super Admin",null,null,"superadmin@clinica.com","$2b$10$D16pkFhRcXQAMutSQNguCOuVNIEekR1riqv/y.0Bp8DcUDOO6bLwu","super_admin","activo","2025-12-02T17:30:40.789Z"]
+Adapted Out: [32,"Super Admin",null,null,"superadmin@clinica.com","$2b$10$D16pkFhRcXQAMutSQNguCOuVNIEekR1riqv/y.0Bp8DcUDOO6bLwu","super_admin","activo","2025-12-02T17:30:40.789Z"]
+Types: ["number","string","object","object","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [33,"Oscar",null,"admin@admin.com","oaguiar2102@gmail.com","$2b$10$y6YQHuGI3TKf1oO1qcwNR.wWH3QwP6xwkXChFiRfOBq4lK18fX/um","admin","activo","2025-12-02T17:47:18.665Z"]
+Adapted Out: [33,"Oscar",null,"admin@admin.com","oaguiar2102@gmail.com","$2b$10$y6YQHuGI3TKf1oO1qcwNR.wWH3QwP6xwkXChFiRfOBq4lK18fX/um","admin","activo","2025-12-02T17:47:18.665Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [34,"oscar perez",null,"30277092","Osvagai@gmail.com","$2b$10$DLiV2KELsa4aX2Yaf/jl7.G0BWLIb6Ce9A.tW6iQljqlJY57rK9DC","cliente","activo","2025-12-03T18:15:47.917Z"]
+Adapted Out: [34,"oscar perez",null,"30277092","Osvagai@gmail.com","$2b$10$DLiV2KELsa4aX2Yaf/jl7.G0BWLIb6Ce9A.tW6iQljqlJY57rK9DC","cliente","activo","2025-12-03T18:15:47.917Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [35,"Angel Aguilar",null,"296555544","aaguilar.5043@unimar.edu.ve","$2b$10$k4/NnKDdpGjU4NYDVoAi8O0wlM.dlVEZidBnxOvzclksskHuTmzry","cliente","activo","2025-12-05T20:09:16.804Z"]
+Adapted Out: [35,"Angel Aguilar",null,"296555544","aaguilar.5043@unimar.edu.ve","$2b$10$k4/NnKDdpGjU4NYDVoAi8O0wlM.dlVEZidBnxOvzclksskHuTmzry","cliente","activo","2025-12-05T20:09:16.804Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [36,"Max Gomez",null,"30539919","maxB.gomezM@gmail.com","$2b$10$euIWTupRe7ywxsbh9kPDPe1PhpzWeB2HKiLa/XqPaEAq5SQY5HgVm","cliente","activo","2025-12-09T09:17:04.480Z"]
+Adapted Out: [36,"Max Gomez",null,"30539919","maxB.gomezM@gmail.com","$2b$10$euIWTupRe7ywxsbh9kPDPe1PhpzWeB2HKiLa/XqPaEAq5SQY5HgVm","cliente","activo","2025-12-09T09:17:04.480Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [38,"andriuw Gomez",null,"11111111","andriuw200@gmail.com","$2b$10$g66UiqYI8Nm3KYJyK2jvoOa3R0QSVIWTHoXzPQfrZQQQ42HEA0abK","cliente","activo","2025-12-10T10:01:17.414Z"]
+Adapted Out: [38,"andriuw Gomez",null,"11111111","andriuw200@gmail.com","$2b$10$g66UiqYI8Nm3KYJyK2jvoOa3R0QSVIWTHoXzPQfrZQQQ42HEA0abK","cliente","activo","2025-12-10T10:01:17.414Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [39,"MATIAS CONTRERAS",null,"212121212121","oaguiar.7092@unimar.edu.ve","$2b$10$35zYHYBBDwZfLgdaOs0UpOIvKsxrX1AqmGHJpGSgxkmTXD9eexAbC","cliente","activo","2025-12-10T10:32:08.055Z"]
+Adapted Out: [39,"MATIAS CONTRERAS",null,"212121212121","oaguiar.7092@unimar.edu.ve","$2b$10$35zYHYBBDwZfLgdaOs0UpOIvKsxrX1AqmGHJpGSgxkmTXD9eexAbC","cliente","activo","2025-12-10T10:32:08.055Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [8,"santiago fermin","fermin","30539731","2004-09-16T04:00:00.000Z","masculino","12345678",null,18,"2025-11-25T20:24:50.616Z"]
+Adapted Out: [8,"santiago fermin","fermin","30539731","2004-09-16T04:00:00.000Z","masculino","12345678",null,18,"2025-11-25T20:24:50.616Z"]
+Types: ["number","string","string","string","string","string","string","object","number","string"]
+---
+QueryType: INSERT
+Params In: [10,"Yemnel Torcat","Torcat","12294821","1974-08-07T04:00:00.000Z","femenino","1234567",null,20,"2025-11-25T21:03:24.257Z"]
+Adapted Out: [10,"Yemnel Torcat","Torcat","12294821","1974-08-07T04:00:00.000Z","femenino","1234567",null,20,"2025-11-25T21:03:24.257Z"]
+Types: ["number","string","string","string","string","string","string","object","number","string"]
+---
+QueryType: INSERT
+Params In: [12,"Daniel  Lopez","Lopez","28492710","2001-04-20T04:00:00.000Z","masculino","04121166833","Los robles",22,"2025-11-28T06:08:03.649Z"]
+Adapted Out: [12,"Daniel  Lopez","Lopez","28492710","2001-04-20T04:00:00.000Z","masculino","04121166833","Los robles",22,"2025-11-28T06:08:03.649Z"]
+Types: ["number","string","string","string","string","string","string","string","number","string"]
+---
+QueryType: INSERT
+Params In: [13,"juan soriano","soriano","12345678","2001-02-01T04:00:00.000Z","masculino","21212121212","apure",27,"2025-12-01T18:36:38.930Z"]
+Adapted Out: [13,"juan soriano","soriano","12345678","2001-02-01T04:00:00.000Z","masculino","21212121212","apure",27,"2025-12-01T18:36:38.930Z"]
+Types: ["number","string","string","string","string","string","string","string","number","string"]
+---
+QueryType: INSERT
+Params In: [14,"oscar perez","perez","30277092","2015-01-03T04:30:00.000Z","masculino","32323","21212",34,"2025-12-03T18:15:48.004Z"]
+Adapted Out: [14,"oscar perez","perez","30277092","2015-01-03T04:30:00.000Z","masculino","32323","21212",34,"2025-12-03T18:15:48.004Z"]
+Types: ["number","string","string","string","string","string","string","string","number","string"]
+---
+QueryType: INSERT
+Params In: [15,"Angel Aguilar","Aguilar","296555544","2000-11-01T04:00:00.000Z","masculino","12121212121",null,35,"2025-12-05T20:09:16.915Z"]
+Adapted Out: [15,"Angel Aguilar","Aguilar","296555544","2000-11-01T04:00:00.000Z","masculino","12121212121",null,35,"2025-12-05T20:09:16.915Z"]
+Types: ["number","string","string","string","string","string","string","object","number","string"]
+---
+QueryType: INSERT
+Params In: [16,"Max Gomez","Gomez","30539919","2004-08-05T04:00:00.000Z","masculino",null,null,36,"2025-12-09T09:17:04.584Z"]
+Adapted Out: [16,"Max Gomez","Gomez","30539919","2004-08-05T04:00:00.000Z","masculino",null,null,36,"2025-12-09T09:17:04.584Z"]
+Types: ["number","string","string","string","string","string","object","object","number","string"]
+---
+QueryType: INSERT
+Params In: [18,"andriuw Gomez","Gomez","11111111","2010-12-15T04:30:00.000Z","masculino",null,"Los robles",38,"2025-12-10T10:01:17.424Z"]
+Adapted Out: [18,"andriuw Gomez","Gomez","11111111","2010-12-15T04:30:00.000Z","masculino",null,"Los robles",38,"2025-12-10T10:01:17.424Z"]
+Types: ["number","string","string","string","string","string","object","string","number","string"]
+---
+QueryType: INSERT
+Params In: [19,"MATIAS CONTRERAS","CONTRERAS","212121212121","2015-12-11T04:30:00.000Z","masculino","212121212121","2240 Nw 114th Ave",39,"2025-12-10T10:32:08.071Z"]
+Adapted Out: [19,"MATIAS CONTRERAS","CONTRERAS","212121212121","2015-12-11T04:30:00.000Z","masculino","212121212121","2240 Nw 114th Ave",39,"2025-12-10T10:32:08.071Z"]
+Types: ["number","string","string","string","string","string","string","string","number","string"]
+---
+QueryType: INSERT
+Params In: [16,8,"2025-11-26T09:22:44.030Z","21212",1,null,null]
+Adapted Out: [16,8,"2025-11-26T09:22:44.030Z","21212",1,null,null]
+Types: ["number","number","string","string","number","object","object"]
+---
+QueryType: INSERT
+Params In: [17,12,"2025-11-28T06:46:39.313Z","21",1,null,4]
+Adapted Out: [17,12,"2025-11-28T06:46:39.313Z","21",1,null,4]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [18,8,"2025-11-29T06:04:24.719Z","21",1,null,4]
+Adapted Out: [18,8,"2025-11-29T06:04:24.719Z","21",1,null,4]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [19,13,"2025-12-01T18:42:36.897Z","212",1,null,4]
+Adapted Out: [19,13,"2025-12-01T18:42:36.897Z","212",1,null,4]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [20,13,"2025-12-01T19:28:27.108Z","32",1,null,4]
+Adapted Out: [20,13,"2025-12-01T19:28:27.108Z","32",1,null,4]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [21,13,"2025-12-01T20:11:49.971Z","2121",1,null,4]
+Adapted Out: [21,13,"2025-12-01T20:11:49.971Z","2121",1,null,4]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [22,13,"2025-12-03T09:03:44.008Z","21",1,null,33]
+Adapted Out: [22,13,"2025-12-03T09:03:44.008Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [24,13,"2025-12-03T09:55:23.766Z","21",1,null,33]
+Adapted Out: [24,13,"2025-12-03T09:55:23.766Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [25,14,"2025-12-03T18:16:20.744Z","3232",1,null,33]
+Adapted Out: [25,14,"2025-12-03T18:16:20.744Z","3232",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [26,12,"2025-12-05T19:38:07.342Z","2121",0,null,33]
+Adapted Out: [26,12,"2025-12-05T19:38:07.342Z","2121",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [27,12,"2025-12-05T19:40:00.407Z","21221",1,null,33]
+Adapted Out: [27,12,"2025-12-05T19:40:00.407Z","21221",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [28,15,"2025-12-05T20:23:32.834Z",null,0,null,33]
+Adapted Out: [28,15,"2025-12-05T20:23:32.834Z",null,0,null,33]
+Types: ["number","number","string","object","number","object","number"]
+---
+QueryType: INSERT
+Params In: [35,14,"2025-12-05T21:55:45.090Z","21",0,null,33]
+Adapted Out: [35,14,"2025-12-05T21:55:45.090Z","21",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [36,14,"2025-12-05T23:02:28.568Z","2121",0,null,33]
+Adapted Out: [36,14,"2025-12-05T23:02:28.568Z","2121",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [37,14,"2025-12-05T23:06:27.766Z","21",0,null,33]
+Adapted Out: [37,14,"2025-12-05T23:06:27.766Z","21",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [38,14,"2025-12-05T23:10:23.767Z","21",0,null,33]
+Adapted Out: [38,14,"2025-12-05T23:10:23.767Z","21",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [41,14,"2025-12-05T23:11:03.795Z","21",0,null,33]
+Adapted Out: [41,14,"2025-12-05T23:11:03.795Z","21",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [42,14,"2025-12-06T00:48:09.539Z","44",1,null,33]
+Adapted Out: [42,14,"2025-12-06T00:48:09.539Z","44",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [43,13,"2025-12-06T00:48:44.995Z","21",1,null,33]
+Adapted Out: [43,13,"2025-12-06T00:48:44.995Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [45,14,"2025-12-06T00:49:53.206Z","21",1,null,33]
+Adapted Out: [45,14,"2025-12-06T00:49:53.206Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [48,14,"2025-12-08T05:38:35.901Z","21",1,null,32]
+Adapted Out: [48,14,"2025-12-08T05:38:35.901Z","21",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [49,14,"2025-12-08T06:16:58.823Z","212121",1,null,32]
+Adapted Out: [49,14,"2025-12-08T06:16:58.823Z","212121",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [50,14,"2025-12-08T07:30:25.057Z","1212",1,null,32]
+Adapted Out: [50,14,"2025-12-08T07:30:25.057Z","1212",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [51,14,"2025-12-08T08:07:34.252Z","",1,null,32]
+Adapted Out: [51,14,"2025-12-08T08:07:34.252Z","",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [52,14,"2025-12-08T09:46:05.827Z","offiline",1,null,32]
+Adapted Out: [52,14,"2025-12-08T09:46:05.827Z","offiline",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [53,14,"2025-12-08T09:48:38.776Z","21",1,null,32]
+Adapted Out: [53,14,"2025-12-08T09:48:38.776Z","21",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [54,14,"2025-12-08T09:48:39.662Z","21",1,null,32]
+Adapted Out: [54,14,"2025-12-08T09:48:39.662Z","21",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [55,14,"2025-12-08T09:48:40.042Z","21",1,null,32]
+Adapted Out: [55,14,"2025-12-08T09:48:40.042Z","21",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [56,14,"2025-12-08T09:48:40.699Z","21",1,null,32]
+Adapted Out: [56,14,"2025-12-08T09:48:40.699Z","21",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [57,14,"2025-12-08T09:48:40.873Z","offlineeeeeee",1,null,32]
+Adapted Out: [57,14,"2025-12-08T09:48:40.873Z","offlineeeeeee",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [58,14,"2025-12-08T09:48:41.515Z","offlineeeeeee",1,null,32]
+Adapted Out: [58,14,"2025-12-08T09:48:41.515Z","offlineeeeeee",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [59,16,"2025-12-09T09:18:59.237Z","prueba",1,null,32]
+Adapted Out: [59,16,"2025-12-09T09:18:59.237Z","prueba",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [60,16,"2025-12-09T09:19:25.753Z","21",0,"2025-12-10T04:23:05.354Z",32]
+Adapted Out: [60,16,"2025-12-09T09:19:25.753Z","21",0,"2025-12-10T04:23:05.354Z",32]
+Types: ["number","number","string","string","number","string","number"]
+---
+QueryType: INSERT
+Params In: [63,16,"2025-12-10T08:30:52.234Z","21",1,null,33]
+Adapted Out: [63,16,"2025-12-10T08:30:52.234Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [64,16,"2025-12-10T08:33:33.373Z","21",1,null,33]
+Adapted Out: [64,16,"2025-12-10T08:33:33.373Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [65,16,"2025-12-10T08:34:01.500Z","22222",1,null,33]
+Adapted Out: [65,16,"2025-12-10T08:34:01.500Z","22222",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [67,16,"2025-12-10T08:38:36.420Z",null,1,null,33]
+Adapted Out: [67,16,"2025-12-10T08:38:36.420Z",null,1,null,33]
+Types: ["number","number","string","object","number","object","number"]
+---
+QueryType: INSERT
+Params In: [68,16,"2025-12-10T08:56:20.940Z",null,1,null,33]
+Adapted Out: [68,16,"2025-12-10T08:56:20.940Z",null,1,null,33]
+Types: ["number","number","string","object","number","object","number"]
+---
+QueryType: INSERT
+Params In: [69,16,"2025-12-10T08:56:31.726Z",null,0,null,33]
+Adapted Out: [69,16,"2025-12-10T08:56:31.726Z",null,0,null,33]
+Types: ["number","number","string","object","number","object","number"]
+---
+QueryType: INSERT
+Params In: [72,18,"2025-12-10T16:44:32.617Z","2121",1,null,33]
+Adapted Out: [72,18,"2025-12-10T16:44:32.617Z","2121",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [5,16,"sangre","{\"hcm\":\"2121\",\"vcm\":\"121\",\"chcm\":\"2121\",\"glucosa\":\"2121\",\"plaquetas\":\"212\",\"leucocitos\":\"12\",\"hematocrito\":\"2121\",\"hemoglobina\":\"2121\"}","wwww"]
+Adapted Out: [5,16,"sangre","{\"hcm\":\"2121\",\"vcm\":\"121\",\"chcm\":\"2121\",\"glucosa\":\"2121\",\"plaquetas\":\"212\",\"leucocitos\":\"12\",\"hematocrito\":\"2121\",\"hemoglobina\":\"2121\"}","wwww"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [6,17,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [6,17,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [7,18,"orina","{\"ph\":\"2121\",\"color\":\"Amarillo\",\"sangre\":\"Trazas\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"2121\",\"bacterias\":\"Ausentes\",\"cristales\":\"2121\",\"proteinas\":\"Negativo\",\"leucocitos\":\"2121\"}","21"]
+Adapted Out: [7,18,"orina","{\"ph\":\"2121\",\"color\":\"Amarillo\",\"sangre\":\"Trazas\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"2121\",\"bacterias\":\"Ausentes\",\"cristales\":\"2121\",\"proteinas\":\"Negativo\",\"leucocitos\":\"2121\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [8,19,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [8,19,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [9,20,"sangre","{\"hcm\":\"32\",\"vcm\":\"32\",\"chcm\":\"32\",\"glucosa\":\"32\",\"plaquetas\":\"32\",\"leucocitos\":\"32\",\"hematocrito\":\"32\",\"hemoglobina\":\"32\"}","32"]
+Adapted Out: [9,20,"sangre","{\"hcm\":\"32\",\"vcm\":\"32\",\"chcm\":\"32\",\"glucosa\":\"32\",\"plaquetas\":\"32\",\"leucocitos\":\"32\",\"hematocrito\":\"32\",\"hemoglobina\":\"32\"}","32"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [10,21,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"16.7\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"20.8\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [10,21,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"16.7\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"20.8\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [11,22,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [11,22,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [12,24,"sangre","{\"hcm\":\"20.9\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [12,24,"sangre","{\"hcm\":\"20.9\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [13,25,"sangre","{\"hcm\":\"32\",\"vcm\":\"32\",\"chcm\":\"32\",\"glucosa\":\"32\",\"plaquetas\":\"32\",\"leucocitos\":\"32\",\"hematocrito\":\"32\",\"hemoglobina\":\"32\"}","32"]
+Adapted Out: [13,25,"sangre","{\"hcm\":\"32\",\"vcm\":\"32\",\"chcm\":\"32\",\"glucosa\":\"32\",\"plaquetas\":\"32\",\"leucocitos\":\"32\",\"hematocrito\":\"32\",\"hemoglobina\":\"32\"}","32"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [14,26,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [14,26,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [15,27,"orina","{\"ph\":\"21\",\"color\":\"Amarillo\",\"sangre\":\"Trazas\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"21\",\"bacterias\":\"Escasas\",\"cristales\":\"21\",\"proteinas\":\"Trazas\",\"leucocitos\":\"21\"}","21"]
+Adapted Out: [15,27,"orina","{\"ph\":\"21\",\"color\":\"Amarillo\",\"sangre\":\"Trazas\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"21\",\"bacterias\":\"Escasas\",\"cristales\":\"21\",\"proteinas\":\"Trazas\",\"leucocitos\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [16,28,"sangre","{\"hcm\":\"21.8\",\"vcm\":\"22\",\"chcm\":\"22\",\"glucosa\":\"22\",\"plaquetas\":\"22\",\"leucocitos\":\"22\",\"hematocrito\":\"2\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [16,28,"sangre","{\"hcm\":\"21.8\",\"vcm\":\"22\",\"chcm\":\"22\",\"glucosa\":\"22\",\"plaquetas\":\"22\",\"leucocitos\":\"22\",\"hematocrito\":\"2\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [23,35,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [23,35,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [24,36,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [24,36,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [25,37,"sangre","{\"hcm\":\"20.9\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [25,37,"sangre","{\"hcm\":\"20.9\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [26,38,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [26,38,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [29,41,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [29,41,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [30,42,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [30,42,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [31,43,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [31,43,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [33,45,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [33,45,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [36,48,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [36,48,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [37,49,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [37,49,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [38,50,"orina","{\"ph\":\"21\",\"color\":\"Ámbar\",\"sangre\":\"Negativo\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"21\",\"bacterias\":\"Ausentes\",\"cristales\":\"21\",\"proteinas\":\"Trazas\",\"leucocitos\":\"21\"}","21"]
+Adapted Out: [38,50,"orina","{\"ph\":\"21\",\"color\":\"Ámbar\",\"sangre\":\"Negativo\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"21\",\"bacterias\":\"Ausentes\",\"cristales\":\"21\",\"proteinas\":\"Trazas\",\"leucocitos\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [39,51,"sangre","{}",""]
+Adapted Out: [39,51,"sangre","{}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [40,52,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [40,52,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [41,53,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [41,53,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [42,54,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [42,54,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [43,55,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","offline"]
+Adapted Out: [43,55,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","offline"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [44,56,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","offline"]
+Adapted Out: [44,56,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","offline"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [45,57,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"2121\"}","21"]
+Adapted Out: [45,57,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"2121\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [46,58,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"2121\"}","21"]
+Adapted Out: [46,58,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"2121\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [47,59,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [47,59,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [48,60,"heces","{\"ph\":\"21\",\"moco\":\"Ausente\",\"color\":\"Marrón\",\"parasitos\":\"21\",\"leucocitos\":\"21\",\"consistencia\":\"Líquida\",\"sangre_oculta\":\"Negativo\",\"restos_alimenticios\":\"21\"}","21"]
+Adapted Out: [48,60,"heces","{\"ph\":\"21\",\"moco\":\"Ausente\",\"color\":\"Marrón\",\"parasitos\":\"21\",\"leucocitos\":\"21\",\"consistencia\":\"Líquida\",\"sangre_oculta\":\"Negativo\",\"restos_alimenticios\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [51,63,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [51,63,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [52,64,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [52,64,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [53,65,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [53,65,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [55,67,"sangre","{}",""]
+Adapted Out: [55,67,"sangre","{}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [56,68,"sangre","{}",""]
+Adapted Out: [56,68,"sangre","{}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [57,69,"sangre","{}",""]
+Adapted Out: [57,69,"sangre","{}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [60,72,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [60,72,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [2,"jeringa","material",0,2,null,"2025-12-09T09:13:44.409Z"]
+Adapted Out: [2,"jeringa","material",0,2,null,"2025-12-09T09:13:44.409Z"]
+Types: ["number","string","string","number","number","object","string"]
+---
+QueryType: INSERT
+Params In: [3,"test","reactivo",201,52,null,"2025-11-28T07:57:52.177Z"]
+Adapted Out: [3,"test","reactivo",201,52,null,"2025-11-28T07:57:52.177Z"]
+Types: ["number","string","string","number","number","object","string"]
+---
+QueryType: INSERT
+Params In: [5,"212","reactivo",921,5,null,"2025-12-01T10:25:12.174Z"]
+Adapted Out: [5,"212","reactivo",921,5,null,"2025-12-01T10:25:12.174Z"]
+Types: ["number","string","string","number","number","object","string"]
+---
+QueryType: INSERT
+Params In: [6,"prueba","reactivo",0,5,null,"2025-12-06T01:11:22.183Z"]
+Adapted Out: [6,"prueba","reactivo",0,5,null,"2025-12-06T01:11:22.183Z"]
+Types: ["number","string","string","number","number","object","string"]
+---
+QueryType: INSERT
+Params In: [7,"test","consumible",121,10,null,"2025-12-09T09:13:17.008Z"]
+Adapted Out: [7,"test","consumible",121,10,null,"2025-12-09T09:13:17.008Z"]
+Types: ["number","string","string","number","number","object","string"]
+---
+QueryType: INSERT
+Params In: [8,"2121","reactivo",222,5,null,"2025-12-10T16:44:54.981Z"]
+Adapted Out: [8,"2121","reactivo",222,5,null,"2025-12-10T16:44:54.981Z"]
+Types: ["number","string","string","number","number","object","string"]
+---
+QueryType: INSERT
+Params In: [3,"Cliente",null,"cucu","cliente@test.com","$2b$10$6cY.y2TG1GfFmvYIYILenO/.7XXEmKhLBv3JIZsOZ92.6uZQ3svMe","cliente","activo","2025-11-21T17:39:37.502Z"]
+Adapted Out: [3,"Cliente",null,"cucu","cliente@test.com","$2b$10$6cY.y2TG1GfFmvYIYILenO/.7XXEmKhLBv3JIZsOZ92.6uZQ3svMe","cliente","activo","2025-11-21T17:39:37.502Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [4,"Admin",null,"cucuadmin","admin@test.com","$2b$10$rjuG2im3tTIIsXTbhqlhpuVV33kWlpjyqLO6nk1bDATtKRk7It2xu","admin","activo","2025-11-21T17:46:00.114Z"]
+Adapted Out: [4,"Admin",null,"cucuadmin","admin@test.com","$2b$10$rjuG2im3tTIIsXTbhqlhpuVV33kWlpjyqLO6nk1bDATtKRk7It2xu","admin","activo","2025-11-21T17:46:00.114Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [18,"santiago fermin",null,"30539731","santiagofermin69@gmail.com","$2b$10$Mxu1MLt4juyNP3b5UTrXo.HpGFjEFSfwdQBoERNunD4szULVgbkEq","cliente","activo","2025-11-25T20:24:50.413Z"]
+Adapted Out: [18,"santiago fermin",null,"30539731","santiagofermin69@gmail.com","$2b$10$Mxu1MLt4juyNP3b5UTrXo.HpGFjEFSfwdQBoERNunD4szULVgbkEq","cliente","activo","2025-11-25T20:24:50.413Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [20,"Yemnel Torcat",null,"12294821","ytorcat.4821@unimar.edu.ve","$2b$10$0K/GTzJjHhuw2KvbJaQk3OaWTdC3zhOs5lW3MX1OfzKLB/HxsLb9G","cliente","activo","2025-11-25T21:03:24.164Z"]
+Adapted Out: [20,"Yemnel Torcat",null,"12294821","ytorcat.4821@unimar.edu.ve","$2b$10$0K/GTzJjHhuw2KvbJaQk3OaWTdC3zhOs5lW3MX1OfzKLB/HxsLb9G","cliente","activo","2025-11-25T21:03:24.164Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [22,"Daniel  Lopez",null,"28492710","dmlg.20.04.01@gmail.com","$2b$10$nReQFUce3BOYCsjl59SAue2jVxY44XvbUqsA87bAjoyQw46lFdB2e","cliente","activo","2025-11-28T06:08:03.525Z"]
+Adapted Out: [22,"Daniel  Lopez",null,"28492710","dmlg.20.04.01@gmail.com","$2b$10$nReQFUce3BOYCsjl59SAue2jVxY44XvbUqsA87bAjoyQw46lFdB2e","cliente","activo","2025-11-28T06:08:03.525Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [27,"juan soriano",null,"12345678","juanpablosoriano01@gmail.com","$2b$10$HS0QcgESRRVVnShKSpTnh.EhL.WvQwEASIKWwJ/IlaHhqb8/Afx9C","cliente","activo","2025-12-01T18:36:38.839Z"]
+Adapted Out: [27,"juan soriano",null,"12345678","juanpablosoriano01@gmail.com","$2b$10$HS0QcgESRRVVnShKSpTnh.EhL.WvQwEASIKWwJ/IlaHhqb8/Afx9C","cliente","activo","2025-12-01T18:36:38.839Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [32,"Super Admin",null,null,"superadmin@clinica.com","$2b$10$D16pkFhRcXQAMutSQNguCOuVNIEekR1riqv/y.0Bp8DcUDOO6bLwu","super_admin","activo","2025-12-02T17:30:40.789Z"]
+Adapted Out: [32,"Super Admin",null,null,"superadmin@clinica.com","$2b$10$D16pkFhRcXQAMutSQNguCOuVNIEekR1riqv/y.0Bp8DcUDOO6bLwu","super_admin","activo","2025-12-02T17:30:40.789Z"]
+Types: ["number","string","object","object","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [33,"Oscar",null,"admin@admin.com","oaguiar2102@gmail.com","$2b$10$y6YQHuGI3TKf1oO1qcwNR.wWH3QwP6xwkXChFiRfOBq4lK18fX/um","admin","activo","2025-12-02T17:47:18.665Z"]
+Adapted Out: [33,"Oscar",null,"admin@admin.com","oaguiar2102@gmail.com","$2b$10$y6YQHuGI3TKf1oO1qcwNR.wWH3QwP6xwkXChFiRfOBq4lK18fX/um","admin","activo","2025-12-02T17:47:18.665Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [34,"oscar perez",null,"30277092","Osvagai@gmail.com","$2b$10$DLiV2KELsa4aX2Yaf/jl7.G0BWLIb6Ce9A.tW6iQljqlJY57rK9DC","cliente","activo","2025-12-03T18:15:47.917Z"]
+Adapted Out: [34,"oscar perez",null,"30277092","Osvagai@gmail.com","$2b$10$DLiV2KELsa4aX2Yaf/jl7.G0BWLIb6Ce9A.tW6iQljqlJY57rK9DC","cliente","activo","2025-12-03T18:15:47.917Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [35,"Angel Aguilar",null,"296555544","aaguilar.5043@unimar.edu.ve","$2b$10$k4/NnKDdpGjU4NYDVoAi8O0wlM.dlVEZidBnxOvzclksskHuTmzry","cliente","activo","2025-12-05T20:09:16.804Z"]
+Adapted Out: [35,"Angel Aguilar",null,"296555544","aaguilar.5043@unimar.edu.ve","$2b$10$k4/NnKDdpGjU4NYDVoAi8O0wlM.dlVEZidBnxOvzclksskHuTmzry","cliente","activo","2025-12-05T20:09:16.804Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [36,"Max Gomez",null,"30539919","maxB.gomezM@gmail.com","$2b$10$euIWTupRe7ywxsbh9kPDPe1PhpzWeB2HKiLa/XqPaEAq5SQY5HgVm","cliente","activo","2025-12-09T09:17:04.480Z"]
+Adapted Out: [36,"Max Gomez",null,"30539919","maxB.gomezM@gmail.com","$2b$10$euIWTupRe7ywxsbh9kPDPe1PhpzWeB2HKiLa/XqPaEAq5SQY5HgVm","cliente","activo","2025-12-09T09:17:04.480Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [38,"andriuw Gomez",null,"11111111","andriuw200@gmail.com","$2b$10$g66UiqYI8Nm3KYJyK2jvoOa3R0QSVIWTHoXzPQfrZQQQ42HEA0abK","cliente","activo","2025-12-10T10:01:17.414Z"]
+Adapted Out: [38,"andriuw Gomez",null,"11111111","andriuw200@gmail.com","$2b$10$g66UiqYI8Nm3KYJyK2jvoOa3R0QSVIWTHoXzPQfrZQQQ42HEA0abK","cliente","activo","2025-12-10T10:01:17.414Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [39,"MATIAS CONTRERAS",null,"212121212121","oaguiar.7092@unimar.edu.ve","$2b$10$35zYHYBBDwZfLgdaOs0UpOIvKsxrX1AqmGHJpGSgxkmTXD9eexAbC","cliente","activo","2025-12-10T10:32:08.055Z"]
+Adapted Out: [39,"MATIAS CONTRERAS",null,"212121212121","oaguiar.7092@unimar.edu.ve","$2b$10$35zYHYBBDwZfLgdaOs0UpOIvKsxrX1AqmGHJpGSgxkmTXD9eexAbC","cliente","activo","2025-12-10T10:32:08.055Z"]
+Types: ["number","string","object","string","string","string","string","string","string"]
+---
+QueryType: INSERT
+Params In: [8,"santiago fermin","fermin","30539731","2004-09-16T04:00:00.000Z","masculino","12345678",null,18,"2025-11-25T20:24:50.616Z"]
+Adapted Out: [8,"santiago fermin","fermin","30539731","2004-09-16T04:00:00.000Z","masculino","12345678",null,18,"2025-11-25T20:24:50.616Z"]
+Types: ["number","string","string","string","string","string","string","object","number","string"]
+---
+QueryType: INSERT
+Params In: [10,"Yemnel Torcat","Torcat","12294821","1974-08-07T04:00:00.000Z","femenino","1234567",null,20,"2025-11-25T21:03:24.257Z"]
+Adapted Out: [10,"Yemnel Torcat","Torcat","12294821","1974-08-07T04:00:00.000Z","femenino","1234567",null,20,"2025-11-25T21:03:24.257Z"]
+Types: ["number","string","string","string","string","string","string","object","number","string"]
+---
+QueryType: INSERT
+Params In: [12,"Daniel  Lopez","Lopez","28492710","2001-04-20T04:00:00.000Z","masculino","04121166833","Los robles",22,"2025-11-28T06:08:03.649Z"]
+Adapted Out: [12,"Daniel  Lopez","Lopez","28492710","2001-04-20T04:00:00.000Z","masculino","04121166833","Los robles",22,"2025-11-28T06:08:03.649Z"]
+Types: ["number","string","string","string","string","string","string","string","number","string"]
+---
+QueryType: INSERT
+Params In: [13,"juan soriano","soriano","12345678","2001-02-01T04:00:00.000Z","masculino","21212121212","apure",27,"2025-12-01T18:36:38.930Z"]
+Adapted Out: [13,"juan soriano","soriano","12345678","2001-02-01T04:00:00.000Z","masculino","21212121212","apure",27,"2025-12-01T18:36:38.930Z"]
+Types: ["number","string","string","string","string","string","string","string","number","string"]
+---
+QueryType: INSERT
+Params In: [14,"oscar perez","perez","30277092","2015-01-03T04:30:00.000Z","masculino","32323","21212",34,"2025-12-03T18:15:48.004Z"]
+Adapted Out: [14,"oscar perez","perez","30277092","2015-01-03T04:30:00.000Z","masculino","32323","21212",34,"2025-12-03T18:15:48.004Z"]
+Types: ["number","string","string","string","string","string","string","string","number","string"]
+---
+QueryType: INSERT
+Params In: [15,"Angel Aguilar","Aguilar","296555544","2000-11-01T04:00:00.000Z","masculino","12121212121",null,35,"2025-12-05T20:09:16.915Z"]
+Adapted Out: [15,"Angel Aguilar","Aguilar","296555544","2000-11-01T04:00:00.000Z","masculino","12121212121",null,35,"2025-12-05T20:09:16.915Z"]
+Types: ["number","string","string","string","string","string","string","object","number","string"]
+---
+QueryType: INSERT
+Params In: [16,"Max Gomez","Gomez","30539919","2004-08-05T04:00:00.000Z","masculino",null,null,36,"2025-12-09T09:17:04.584Z"]
+Adapted Out: [16,"Max Gomez","Gomez","30539919","2004-08-05T04:00:00.000Z","masculino",null,null,36,"2025-12-09T09:17:04.584Z"]
+Types: ["number","string","string","string","string","string","object","object","number","string"]
+---
+QueryType: INSERT
+Params In: [18,"andriuw Gomez","Gomez","11111111","2010-12-15T04:30:00.000Z","masculino",null,"Los robles",38,"2025-12-10T10:01:17.424Z"]
+Adapted Out: [18,"andriuw Gomez","Gomez","11111111","2010-12-15T04:30:00.000Z","masculino",null,"Los robles",38,"2025-12-10T10:01:17.424Z"]
+Types: ["number","string","string","string","string","string","object","string","number","string"]
+---
+QueryType: INSERT
+Params In: [19,"MATIAS CONTRERAS","CONTRERAS","212121212121","2015-12-11T04:30:00.000Z","masculino","212121212121","2240 Nw 114th Ave",39,"2025-12-10T10:32:08.071Z"]
+Adapted Out: [19,"MATIAS CONTRERAS","CONTRERAS","212121212121","2015-12-11T04:30:00.000Z","masculino","212121212121","2240 Nw 114th Ave",39,"2025-12-10T10:32:08.071Z"]
+Types: ["number","string","string","string","string","string","string","string","number","string"]
+---
+QueryType: INSERT
+Params In: [16,8,"2025-11-26T09:22:44.030Z","21212",1,null,null]
+Adapted Out: [16,8,"2025-11-26T09:22:44.030Z","21212",1,null,null]
+Types: ["number","number","string","string","number","object","object"]
+---
+QueryType: INSERT
+Params In: [17,12,"2025-11-28T06:46:39.313Z","21",1,null,4]
+Adapted Out: [17,12,"2025-11-28T06:46:39.313Z","21",1,null,4]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [18,8,"2025-11-29T06:04:24.719Z","21",1,null,4]
+Adapted Out: [18,8,"2025-11-29T06:04:24.719Z","21",1,null,4]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [19,13,"2025-12-01T18:42:36.897Z","212",1,null,4]
+Adapted Out: [19,13,"2025-12-01T18:42:36.897Z","212",1,null,4]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [20,13,"2025-12-01T19:28:27.108Z","32",1,null,4]
+Adapted Out: [20,13,"2025-12-01T19:28:27.108Z","32",1,null,4]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [21,13,"2025-12-01T20:11:49.971Z","2121",1,null,4]
+Adapted Out: [21,13,"2025-12-01T20:11:49.971Z","2121",1,null,4]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [22,13,"2025-12-03T09:03:44.008Z","21",1,null,33]
+Adapted Out: [22,13,"2025-12-03T09:03:44.008Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [24,13,"2025-12-03T09:55:23.766Z","21",1,null,33]
+Adapted Out: [24,13,"2025-12-03T09:55:23.766Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [25,14,"2025-12-03T18:16:20.744Z","3232",1,null,33]
+Adapted Out: [25,14,"2025-12-03T18:16:20.744Z","3232",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [26,12,"2025-12-05T19:38:07.342Z","2121",0,null,33]
+Adapted Out: [26,12,"2025-12-05T19:38:07.342Z","2121",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [27,12,"2025-12-05T19:40:00.407Z","21221",1,null,33]
+Adapted Out: [27,12,"2025-12-05T19:40:00.407Z","21221",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [28,15,"2025-12-05T20:23:32.834Z",null,0,null,33]
+Adapted Out: [28,15,"2025-12-05T20:23:32.834Z",null,0,null,33]
+Types: ["number","number","string","object","number","object","number"]
+---
+QueryType: INSERT
+Params In: [35,14,"2025-12-05T21:55:45.090Z","21",0,null,33]
+Adapted Out: [35,14,"2025-12-05T21:55:45.090Z","21",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [36,14,"2025-12-05T23:02:28.568Z","2121",0,null,33]
+Adapted Out: [36,14,"2025-12-05T23:02:28.568Z","2121",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [37,14,"2025-12-05T23:06:27.766Z","21",0,null,33]
+Adapted Out: [37,14,"2025-12-05T23:06:27.766Z","21",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [38,14,"2025-12-05T23:10:23.767Z","21",0,null,33]
+Adapted Out: [38,14,"2025-12-05T23:10:23.767Z","21",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [41,14,"2025-12-05T23:11:03.795Z","21",0,null,33]
+Adapted Out: [41,14,"2025-12-05T23:11:03.795Z","21",0,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [42,14,"2025-12-06T00:48:09.539Z","44",1,null,33]
+Adapted Out: [42,14,"2025-12-06T00:48:09.539Z","44",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [43,13,"2025-12-06T00:48:44.995Z","21",1,null,33]
+Adapted Out: [43,13,"2025-12-06T00:48:44.995Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [45,14,"2025-12-06T00:49:53.206Z","21",1,null,33]
+Adapted Out: [45,14,"2025-12-06T00:49:53.206Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [48,14,"2025-12-08T05:38:35.901Z","21",1,null,32]
+Adapted Out: [48,14,"2025-12-08T05:38:35.901Z","21",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [49,14,"2025-12-08T06:16:58.823Z","212121",1,null,32]
+Adapted Out: [49,14,"2025-12-08T06:16:58.823Z","212121",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [50,14,"2025-12-08T07:30:25.057Z","1212",1,null,32]
+Adapted Out: [50,14,"2025-12-08T07:30:25.057Z","1212",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [51,14,"2025-12-08T08:07:34.252Z","",1,null,32]
+Adapted Out: [51,14,"2025-12-08T08:07:34.252Z","",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [52,14,"2025-12-08T09:46:05.827Z","offiline",1,null,32]
+Adapted Out: [52,14,"2025-12-08T09:46:05.827Z","offiline",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [53,14,"2025-12-08T09:48:38.776Z","21",1,null,32]
+Adapted Out: [53,14,"2025-12-08T09:48:38.776Z","21",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [54,14,"2025-12-08T09:48:39.662Z","21",1,null,32]
+Adapted Out: [54,14,"2025-12-08T09:48:39.662Z","21",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [55,14,"2025-12-08T09:48:40.042Z","21",1,null,32]
+Adapted Out: [55,14,"2025-12-08T09:48:40.042Z","21",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [56,14,"2025-12-08T09:48:40.699Z","21",1,null,32]
+Adapted Out: [56,14,"2025-12-08T09:48:40.699Z","21",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [57,14,"2025-12-08T09:48:40.873Z","offlineeeeeee",1,null,32]
+Adapted Out: [57,14,"2025-12-08T09:48:40.873Z","offlineeeeeee",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [58,14,"2025-12-08T09:48:41.515Z","offlineeeeeee",1,null,32]
+Adapted Out: [58,14,"2025-12-08T09:48:41.515Z","offlineeeeeee",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [59,16,"2025-12-09T09:18:59.237Z","prueba",1,null,32]
+Adapted Out: [59,16,"2025-12-09T09:18:59.237Z","prueba",1,null,32]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [60,16,"2025-12-09T09:19:25.753Z","21",0,"2025-12-10T04:23:05.354Z",32]
+Adapted Out: [60,16,"2025-12-09T09:19:25.753Z","21",0,"2025-12-10T04:23:05.354Z",32]
+Types: ["number","number","string","string","number","string","number"]
+---
+QueryType: INSERT
+Params In: [63,16,"2025-12-10T08:30:52.234Z","21",1,null,33]
+Adapted Out: [63,16,"2025-12-10T08:30:52.234Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [64,16,"2025-12-10T08:33:33.373Z","21",1,null,33]
+Adapted Out: [64,16,"2025-12-10T08:33:33.373Z","21",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [65,16,"2025-12-10T08:34:01.500Z","22222",1,null,33]
+Adapted Out: [65,16,"2025-12-10T08:34:01.500Z","22222",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [67,16,"2025-12-10T08:38:36.420Z",null,1,null,33]
+Adapted Out: [67,16,"2025-12-10T08:38:36.420Z",null,1,null,33]
+Types: ["number","number","string","object","number","object","number"]
+---
+QueryType: INSERT
+Params In: [68,16,"2025-12-10T08:56:20.940Z",null,1,null,33]
+Adapted Out: [68,16,"2025-12-10T08:56:20.940Z",null,1,null,33]
+Types: ["number","number","string","object","number","object","number"]
+---
+QueryType: INSERT
+Params In: [69,16,"2025-12-10T08:56:31.726Z",null,0,null,33]
+Adapted Out: [69,16,"2025-12-10T08:56:31.726Z",null,0,null,33]
+Types: ["number","number","string","object","number","object","number"]
+---
+QueryType: INSERT
+Params In: [72,18,"2025-12-10T16:44:32.617Z","2121",1,null,33]
+Adapted Out: [72,18,"2025-12-10T16:44:32.617Z","2121",1,null,33]
+Types: ["number","number","string","string","number","object","number"]
+---
+QueryType: INSERT
+Params In: [5,16,"sangre","{\"hcm\":\"2121\",\"vcm\":\"121\",\"chcm\":\"2121\",\"glucosa\":\"2121\",\"plaquetas\":\"212\",\"leucocitos\":\"12\",\"hematocrito\":\"2121\",\"hemoglobina\":\"2121\"}","wwww"]
+Adapted Out: [5,16,"sangre","{\"hcm\":\"2121\",\"vcm\":\"121\",\"chcm\":\"2121\",\"glucosa\":\"2121\",\"plaquetas\":\"212\",\"leucocitos\":\"12\",\"hematocrito\":\"2121\",\"hemoglobina\":\"2121\"}","wwww"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [6,17,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [6,17,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [7,18,"orina","{\"ph\":\"2121\",\"color\":\"Amarillo\",\"sangre\":\"Trazas\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"2121\",\"bacterias\":\"Ausentes\",\"cristales\":\"2121\",\"proteinas\":\"Negativo\",\"leucocitos\":\"2121\"}","21"]
+Adapted Out: [7,18,"orina","{\"ph\":\"2121\",\"color\":\"Amarillo\",\"sangre\":\"Trazas\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"2121\",\"bacterias\":\"Ausentes\",\"cristales\":\"2121\",\"proteinas\":\"Negativo\",\"leucocitos\":\"2121\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [8,19,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [8,19,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [9,20,"sangre","{\"hcm\":\"32\",\"vcm\":\"32\",\"chcm\":\"32\",\"glucosa\":\"32\",\"plaquetas\":\"32\",\"leucocitos\":\"32\",\"hematocrito\":\"32\",\"hemoglobina\":\"32\"}","32"]
+Adapted Out: [9,20,"sangre","{\"hcm\":\"32\",\"vcm\":\"32\",\"chcm\":\"32\",\"glucosa\":\"32\",\"plaquetas\":\"32\",\"leucocitos\":\"32\",\"hematocrito\":\"32\",\"hemoglobina\":\"32\"}","32"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [10,21,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"16.7\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"20.8\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [10,21,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"16.7\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"20.8\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [11,22,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [11,22,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [12,24,"sangre","{\"hcm\":\"20.9\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [12,24,"sangre","{\"hcm\":\"20.9\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [13,25,"sangre","{\"hcm\":\"32\",\"vcm\":\"32\",\"chcm\":\"32\",\"glucosa\":\"32\",\"plaquetas\":\"32\",\"leucocitos\":\"32\",\"hematocrito\":\"32\",\"hemoglobina\":\"32\"}","32"]
+Adapted Out: [13,25,"sangre","{\"hcm\":\"32\",\"vcm\":\"32\",\"chcm\":\"32\",\"glucosa\":\"32\",\"plaquetas\":\"32\",\"leucocitos\":\"32\",\"hematocrito\":\"32\",\"hemoglobina\":\"32\"}","32"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [14,26,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [14,26,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [15,27,"orina","{\"ph\":\"21\",\"color\":\"Amarillo\",\"sangre\":\"Trazas\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"21\",\"bacterias\":\"Escasas\",\"cristales\":\"21\",\"proteinas\":\"Trazas\",\"leucocitos\":\"21\"}","21"]
+Adapted Out: [15,27,"orina","{\"ph\":\"21\",\"color\":\"Amarillo\",\"sangre\":\"Trazas\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"21\",\"bacterias\":\"Escasas\",\"cristales\":\"21\",\"proteinas\":\"Trazas\",\"leucocitos\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [16,28,"sangre","{\"hcm\":\"21.8\",\"vcm\":\"22\",\"chcm\":\"22\",\"glucosa\":\"22\",\"plaquetas\":\"22\",\"leucocitos\":\"22\",\"hematocrito\":\"2\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [16,28,"sangre","{\"hcm\":\"21.8\",\"vcm\":\"22\",\"chcm\":\"22\",\"glucosa\":\"22\",\"plaquetas\":\"22\",\"leucocitos\":\"22\",\"hematocrito\":\"2\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [23,35,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [23,35,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [24,36,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [24,36,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [25,37,"sangre","{\"hcm\":\"20.9\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [25,37,"sangre","{\"hcm\":\"20.9\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [26,38,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [26,38,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [29,41,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [29,41,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [30,42,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [30,42,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [31,43,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [31,43,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [33,45,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [33,45,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [36,48,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [36,48,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [37,49,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [37,49,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [38,50,"orina","{\"ph\":\"21\",\"color\":\"Ámbar\",\"sangre\":\"Negativo\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"21\",\"bacterias\":\"Ausentes\",\"cristales\":\"21\",\"proteinas\":\"Trazas\",\"leucocitos\":\"21\"}","21"]
+Adapted Out: [38,50,"orina","{\"ph\":\"21\",\"color\":\"Ámbar\",\"sangre\":\"Negativo\",\"aspecto\":\"Claro\",\"glucosa\":\"Negativo\",\"densidad\":\"21\",\"bacterias\":\"Ausentes\",\"cristales\":\"21\",\"proteinas\":\"Trazas\",\"leucocitos\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [39,51,"sangre","{}",""]
+Adapted Out: [39,51,"sangre","{}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [40,52,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [40,52,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [41,53,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [41,53,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [42,54,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [42,54,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [43,55,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","offline"]
+Adapted Out: [43,55,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","offline"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [44,56,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","offline"]
+Adapted Out: [44,56,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","offline"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [45,57,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"2121\"}","21"]
+Adapted Out: [45,57,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"2121\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [46,58,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"2121\"}","21"]
+Adapted Out: [46,58,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"2121\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [47,59,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [47,59,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [48,60,"heces","{\"ph\":\"21\",\"moco\":\"Ausente\",\"color\":\"Marrón\",\"parasitos\":\"21\",\"leucocitos\":\"21\",\"consistencia\":\"Líquida\",\"sangre_oculta\":\"Negativo\",\"restos_alimenticios\":\"21\"}","21"]
+Adapted Out: [48,60,"heces","{\"ph\":\"21\",\"moco\":\"Ausente\",\"color\":\"Marrón\",\"parasitos\":\"21\",\"leucocitos\":\"21\",\"consistencia\":\"Líquida\",\"sangre_oculta\":\"Negativo\",\"restos_alimenticios\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [51,63,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [51,63,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [52,64,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [52,64,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [53,65,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Adapted Out: [53,65,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [55,67,"sangre","{}",""]
+Adapted Out: [55,67,"sangre","{}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [56,68,"sangre","{}",""]
+Adapted Out: [56,68,"sangre","{}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [57,69,"sangre","{}",""]
+Adapted Out: [57,69,"sangre","{}",""]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [60,72,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Adapted Out: [60,72,"sangre","{\"hcm\":\"21\",\"vcm\":\"21\",\"chcm\":\"21\",\"glucosa\":\"21\",\"plaquetas\":\"21\",\"leucocitos\":\"21\",\"hematocrito\":\"21\",\"hemoglobina\":\"21\"}","21"]
+Types: ["number","number","string","string","string"]
+---
+QueryType: INSERT
+Params In: [2,"jeringa","material",0,2,null,"2025-12-09T09:13:44.409Z"]
+Adapted Out: [2,"jeringa","material",0,2,null,"2025-12-09T09:13:44.409Z"]
+Types: ["number","string","string","number","number","object","string"]
+---
+QueryType: INSERT
+Params In: [3,"test","reactivo",201,52,null,"2025-11-28T07:57:52.177Z"]
+Adapted Out: [3,"test","reactivo",201,52,null,"2025-11-28T07:57:52.177Z"]
+Types: ["number","string","string","number","number","object","string"]
+---
+QueryType: INSERT
+Params In: [5,"212","reactivo",921,5,null,"2025-12-01T10:25:12.174Z"]
+Adapted Out: [5,"212","reactivo",921,5,null,"2025-12-01T10:25:12.174Z"]
+Types: ["number","string","string","number","number","object","string"]
+---
+QueryType: INSERT
+Params In: [6,"prueba","reactivo",0,5,null,"2025-12-06T01:11:22.183Z"]
+Adapted Out: [6,"prueba","reactivo",0,5,null,"2025-12-06T01:11:22.183Z"]
+Types: ["number","string","string","number","number","object","string"]
+---
+QueryType: INSERT
+Params In: [7,"test","consumible",121,10,null,"2025-12-09T09:13:17.008Z"]
+Adapted Out: [7,"test","consumible",121,10,null,"2025-12-09T09:13:17.008Z"]
+Types: ["number","string","string","number","number","object","string"]
+---
+QueryType: INSERT
+Params In: [8,"2121","reactivo",222,5,null,"2025-12-10T16:44:54.981Z"]
+Adapted Out: [8,"2121","reactivo",222,5,null,"2025-12-10T16:44:54.981Z"]
+Types: ["number","string","string","number","number","object","string"]
+---
