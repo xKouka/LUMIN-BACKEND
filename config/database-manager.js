@@ -49,6 +49,11 @@ class DatabaseManager {
      * Inicializa la base de datos SQLite
      */
     initializeSQLite() {
+        if (process.env.NODE_ENV === 'production') {
+            console.log('production mode detected: SQLite initialization skipped');
+            return;
+        }
+
         try {
             this.sqlite = getSQLiteInstance();
             console.log('✓ Base de datos SQLite inicializada');
@@ -91,7 +96,7 @@ class DatabaseManager {
      * @returns {Object} Objeto de conexión (PostgreSQL Pool o SQLite wrapper)
      */
     getConnection() {
-        if (this.isOnline) {
+        if (this.isOnline || process.env.NODE_ENV === 'production') {
             return this.pgPool;
         } else {
             return this.sqlite;

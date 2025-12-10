@@ -75,26 +75,30 @@ const server = app.listen(PORT, async () => {
   // Esperar 2 segundos para que checkConnectivity se complete
   await new Promise(resolve => setTimeout(resolve, 2000));
 
-  // Intentar descargar datos iniciales a SQLite si está online
+  // Intentar descargar datos iniciales a SQLite (Solo si NO es producción)
   try {
-    const dbManager = getManager();
-
-    // Re-verificar conectividad de forma explícita
-    const isOnline = await dbManager.checkConnectivity();
-
-    if (isOnline) {
-      console.log('📥 Descargando datos iniciales a SQLite...');
-      const syncService = getSync();
-      const result = await syncService.downloadFromPostgreSQL();
-
-      if (result && result.success) {
-        console.log('✅ SQLite poblada con datos de PostgreSQL');
-      } else {
-        console.log('⚠️  Descarga de datos no completada completamente');
-      }
+    if (process.env.NODE_ENV === 'production') {
+      console.log('🌍 Modo Producción: Saltando descarga a SQLite (Offline mode desactivado)');
     } else {
-      console.log('⚠️  Sin conexión - SQLite usará datos locales existentes');
-      console.log('💡 Tip: Ejecuta "node populate-sqlite.js" cuando tengas internet');
+      const dbManager = getManager();
+
+      // Re-verificar conectividad de forma explícita
+      const isOnline = await dbManager.checkConnectivity();
+
+      if (isOnline) {
+        console.log('📥 Descargando datos iniciales a SQLite...');
+        const syncService = getSync();
+        const result = await syncService.downloadFromPostgreSQL();
+
+        if (result && result.success) {
+          console.log('✅ SQLite poblada con datos de PostgreSQL');
+        } else {
+          console.log('⚠️  Descarga de datos no completada completamente');
+        }
+      } else {
+        console.log('⚠️  Sin conexión - SQLite usará datos locales existentes');
+        console.log('💡 Tip: Ejecuta "node populate-sqlite.js" cuando tengas internet');
+      }
     }
   } catch (error) {
     console.warn('⚠️  Error en descarga inicial:', error.message);
