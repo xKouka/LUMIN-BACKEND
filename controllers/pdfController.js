@@ -42,15 +42,27 @@ const generarPDF = async (req, res) => {
     }
 
     // 3. Preparar Template
-    const templatePath = path.join(__dirname, '..', 'templates', 'reporte.html');
+    // Vercel path resolution fix: usar process.cwd()
+    const templatePath = path.join(process.cwd(), 'templates', 'reporte.html');
+    console.log(`📂 Intentando leer template desde: ${templatePath}`);
+
+    if (!fs.existsSync(templatePath)) {
+      console.error(`❌ Template no encontrado en: ${templatePath}`);
+      return res.status(500).json({ error: 'Template HTML no encontrado en el servidor' });
+    }
+
     let html = fs.readFileSync(templatePath, 'utf8');
 
     // 4. Cargar Logo en Base64
-    const logoPath = path.join(__dirname, '..', 'logo-laboratorio.png');
+    const logoPath = path.join(process.cwd(), 'logo-laboratorio.png');
+    console.log(`📂 Intentando leer logo desde: ${logoPath}`);
+
     let logoBase64 = '';
     if (fs.existsSync(logoPath)) {
       const logoData = fs.readFileSync(logoPath);
       logoBase64 = `data:image/png;base64,${logoData.toString('base64')}`;
+    } else {
+      console.warn(`⚠️ Logo no encontrado en: ${logoPath}`);
     }
 
     // 5. Reemplazar Datos Generales
