@@ -1,4 +1,4 @@
-const Database = require('better-sqlite3');
+// CONSTANTE ELIMINADA: const Database = require('better-sqlite3');
 const path = require('path');
 const fs = require('fs');
 
@@ -13,6 +13,9 @@ class SQLiteDatabase {
    */
   initialize() {
     try {
+      // Lazy load better-sqlite3 solo cuando se inicializa (dev mode)
+      const Database = require('better-sqlite3');
+
       // Crear directorio data si no existe
       const dataDir = path.dirname(this.dbPath);
       if (!fs.existsSync(dataDir)) {
