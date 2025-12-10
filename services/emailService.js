@@ -35,7 +35,7 @@ const sendUserCredentialsEmail = async (recipientEmail, username, plainPassword,
       return { success: false, error: 'No internet connection', queued: true };
     }
 
-    const loginUrl = 'http://localhost:3000/login';
+    const loginUrl = `${process.env.FRONTEND_URL || 'http://localhost:3000'}/login`;
 
     const mailOptions = {
       from: `"${process.env.SMTP_FROM_NAME}" <${process.env.SMTP_FROM_EMAIL}>`,
@@ -172,19 +172,20 @@ const sendTestNotificationEmail = async (recipientEmail, nombrePaciente, tipoExa
             </div>
 
             <div style="text-align: center;">
-              <a href="http://localhost:3000/login" class="button" style="color: #ffffff !important;">Ver Mis Muestras</a>
-            </div>
-          </div>
+              <a href={`${ process.env.FRONTEND_URL || 'http://localhost:3000'
+  }/login`} class="button" style="color: #ffffff !important;">Ver Mis Muestras</a >
+            </div >
+          </div >
 
-          <!-- Footer -->
-          <div class="footer">
-            <p>Este es un correo automático, por favor no respondas a este mensaje.</p>
-            <p>&copy; ${new Date().getFullYear()} L.U.M.I.N. Todos los derechos reservados.</p>
-          </div>
-        </div>
-      </body>
-      </html>
-      `,
+          < !--Footer -->
+  <div class="footer">
+    <p>Este es un correo automático, por favor no respondas a este mensaje.</p>
+    <p>&copy; ${new Date().getFullYear()} L.U.M.I.N. Todos los derechos reservados.</p>
+  </div>
+        </div >
+      </body >
+      </html >
+  `,
     };
 
     const info = await transporter.sendMail(mailOptions);
@@ -205,23 +206,23 @@ const sendPaymentConfirmationEmail = async (recipientEmail, nombrePaciente, idMu
     if (!isConnected) return { success: false, error: 'No internet connection', queued: true };
 
     const mailOptions = {
-      from: `"${process.env.SMTP_FROM_NAME}" <${process.env.SMTP_FROM_EMAIL}>`,
+      from: `"${process.env.SMTP_FROM_NAME}" < ${ process.env.SMTP_FROM_EMAIL }> `,
       to: recipientEmail,
       subject: '✅ Pago Confirmado - L.U.M.I.N.',
       html: `
-      <!DOCTYPE html>
-      <html>
+  < !DOCTYPE html >
+    <html>
       <head>
         <meta charset="utf-8">
-        <style>
-          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
-          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-          .header { text-align: center; padding: 20px 0; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 10px 10px 0 0; color: white; }
-          .content { background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 10px 10px; }
-          .success-box { background-color: #ecfdf5; border-left: 4px solid #10b981; padding: 20px; margin: 20px 0; border-radius: 5px; }
-          .button { display: inline-block; padding: 12px 30px; background-color: #10b981; color: white; text-decoration: none; border-radius: 5px; margin: 20px 0; font-weight: bold; }
-          .footer { text-align: center; margin-top: 20px; font-size: 12px; color: #666; }
-        </style>
+          <style>
+            body {font - family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+            .container {max - width: 600px; margin: 0 auto; padding: 20px; }
+            .header {text - align: center; padding: 20px 0; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 10px 10px 0 0; color: white; }
+            .content {background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 10px 10px; }
+            .success-box {background - color: #ecfdf5; border-left: 4px solid #10b981; padding: 20px; margin: 20px 0; border-radius: 5px; }
+            .button {display: inline-block; padding: 12px 30px; background-color: #10b981; color: white; text-decoration: none; border-radius: 5px; margin: 20px 0; font-weight: bold; }
+            .footer {text - align: center; margin-top: 20px; font-size: 12px; color: #666; }
+          </style>
       </head>
       <body>
         <div class="container">
@@ -231,14 +232,14 @@ const sendPaymentConfirmationEmail = async (recipientEmail, nombrePaciente, idMu
           <div class="content">
             <p>Hola <strong>${nombrePaciente}</strong>,</p>
             <p>Hemos confirmado el pago de tu muestra <strong>#${idMuestra}</strong>.</p>
-            
+
             <div class="success-box">
               <p>Tu muestra ha sido marcada como <strong>PAGADA</strong>.</p>
               <p>Ya puedes acceder a los resultados desde tu panel de cliente.</p>
             </div>
 
             <div style="text-align: center;">
-              <a href="http://localhost:3000/login" class="button" style="color: #ffffff !important;">Ver Resultados</a>
+              <a href={`${process.env.FRONTEND_URL || 'http://localhost:3000'}/login`} class="button" style="color: #ffffff !important;">Ver Resultados</a>
             </div>
           </div>
           <div class="footer">
@@ -246,8 +247,8 @@ const sendPaymentConfirmationEmail = async (recipientEmail, nombrePaciente, idMu
           </div>
         </div>
       </body>
-      </html>
-      `
+    </html>
+`
     };
 
     const info = await transporter.sendMail(mailOptions);
@@ -271,15 +272,15 @@ const sendStatusUpdateEmail = async (recipientEmail, nombrePaciente, estado, idM
     const color = estado === 'completado' ? '#10b981' : '#f59e0b';
 
     const mailOptions = {
-      from: `"${process.env.SMTP_FROM_NAME}" <${process.env.SMTP_FROM_EMAIL}>`,
+      from: `"${process.env.SMTP_FROM_NAME}" < ${ process.env.SMTP_FROM_EMAIL }> `,
       to: recipientEmail,
-      subject: `🔄 Actualización de Estado - Muestra #${idMuestra}`,
+      subject: `🔄 Actualización de Estado - Muestra #${ idMuestra } `,
       html: `
-      <!DOCTYPE html>
-      <html>
-      <head> <meta charset="utf-8"> 
+  < !DOCTYPE html >
+    <html>
+      <head> <meta charset="utf-8">
         <style>
-          .button { display: inline-block; padding: 12px 30px; background-color: #10b981; color: #ffffff !important; text-decoration: none; border-radius: 5px; font-weight: bold; }
+          .button {display: inline-block; padding: 12px 30px; background-color: #10b981; color: #ffffff !important; text-decoration: none; border-radius: 5px; font-weight: bold; }
         </style>
       </head>
       <body style="font-family: Arial, sans-serif; color: #333;">
@@ -292,13 +293,13 @@ const sendStatusUpdateEmail = async (recipientEmail, nombrePaciente, estado, idM
             <p>El estado de tu muestra <strong>#${idMuestra}</strong> ha cambiado a:</p>
             <h3 style="color: ${color}; text-align: center; text-transform: uppercase;">${estadoTexto}</h3>
             <div style="text-align: center; margin-top: 30px;">
-              <a href="http://localhost:3000/login" class="button" style="color: #ffffff !important;">Ver Detalles</a>
+              <a href={`${process.env.FRONTEND_URL || 'http://localhost:3000'}/login`} class="button" style="color: #ffffff !important;">Ver Detalles</a>
             </div>
           </div>
         </div>
       </body>
-      </html>
-      `
+    </html>
+`
     };
 
     await transporter.sendMail(mailOptions);
